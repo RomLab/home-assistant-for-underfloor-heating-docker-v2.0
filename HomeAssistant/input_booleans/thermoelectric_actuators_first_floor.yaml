@@ -1,0 +1,33 @@
+thermo_actuator_first_floor_corridor_and_toilet:
+  name: 'Chodba/toaleta'
+  icon: mdi:valve
+thermo_actuator_first_floor_bathroom_ladder:
+  name: 'Koupelna přízemí – žebřík'
+  icon: mdi:valve
+thermo_actuator_first_floor_bathroom:
+  name: 'Koupelna přízemí'
+  icon: mdi:valve
+thermo_actuator_first_floor_kitchen_door:
+  name: 'Kuchyně – dveře'
+  icon: mdi:valve
+thermo_actuator_first_floor_living_room_1:
+  name: 'Obývací pokoj – okruh 1'
+  icon: mdi:valve
+thermo_actuator_first_floor_living_room_2:
+  name: 'Obývací pokoj – okruh 2'
+  icon: mdi:valve
+thermo_actuator_first_floor_living_room_3:
+  name: 'Obývací pokoj – okruh 3'
+  icon: mdi:valve
+thermo_actuator_first_floor_kitchen_windows:
+  name: 'Kuchyně – okna'
+  icon: mdi:valve
+thermo_actuator_first_floor_cellar_ladder:
+  name: 'Sklep – žebřík'
+  icon: mdi:valve
+thermo_actuator_first_floor_garage_1:
+  name: 'Garáž – okruh 1'
+  icon: mdi:valve
+thermo_actuator_first_floor_garage_2:
+  name: 'Garáž – okruh 2'
+  icon: mdi:valve

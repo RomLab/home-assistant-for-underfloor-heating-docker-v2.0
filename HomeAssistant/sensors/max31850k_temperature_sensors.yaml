@@ -1,0 +1,15 @@
+# Sensors from a fireplace (MAX31850K)
+- platform: template
+  sensors:
+    fireplace_cellar:
+      friendly_name: 'Sklep – krb'
+      unit_of_measurement: '°C'
+      value_template: '0'
+    fireplace_first_floor:
+      friendly_name: 'Přízemí – krb'
+      unit_of_measurement: '°C'
+      value_template: '0'
+    fireplace_second_floor:
+      friendly_name: 'Patro – krb'
+      unit_of_measurement: '°C'
+      value_template: '0'

@@ -1,0 +1,36 @@
+- alias: 'Sets value 100 % to actuator for a parents bedroom'
+  initial_state: 'on'
+  trigger:
+    platform: template
+    value_template: "{{ is_state_attr('climate.parents_bedroom','hvac_action', 'heating') }}"
+  condition:
+    - condition: state
+      entity_id: input_boolean.manual_control_room_thermostat
+      state: 'on'
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: 
+          - input_number.thermo_actuator_parents_bedroom_window
+          - input_number.thermo_actuator_parents_bedroom_door
+        value: '100'
+    - service: script.turn_on
+      entity_id: script.turn_on_pump_corridor_second_floor
+- alias: 'Sets value 0 % to actuator for a parents bedroom'
+  initial_state: 'on'
+  trigger:
+    platform: template
+    value_template: "{{ is_state_attr('climate.parents_bedroom','hvac_action', 'idle') or  is_state_attr('climate.parents_bedroom','hvac_action', 'off')}}"
+  condition:
+    - condition: state
+      entity_id: input_boolean.manual_control_room_thermostat
+      state: 'on'
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: 
+          - input_number.thermo_actuator_parents_bedroom_window
+          - input_number.thermo_actuator_parents_bedroom_door
+        value: '0'
+    - service: script.turn_on
+      entity_id: script.turn_off_pump_corridor_second_floor

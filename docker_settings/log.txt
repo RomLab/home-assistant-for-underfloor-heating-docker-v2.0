@@ -1,0 +1,1276 @@
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Collecting RPi.GPIO
+  Downloading RPi.GPIO-0.7.1.tar.gz (29 kB)
+Building wheels for collected packages: RPi.GPIO
+  Building wheel for RPi.GPIO (setup.py): started
+  Building wheel for RPi.GPIO (setup.py): finished with status 'done'
+  Created wheel for RPi.GPIO: filename=RPi.GPIO-0.7.1-cp39-cp39-linux_armv7l.whl size=25854 sha256=6e43aa6577af52cb1ad46d2c0e838954198747971d8548014d3fcaa4395b52b7
+  Stored in directory: /root/.cache/pip/wheels/b4/65/39/789a186465c4823ffa930b950af77c86f1494adf1d8e21ac1a
+Successfully built RPi.GPIO
+Installing collected packages: RPi.GPIO
+Successfully installed RPi.GPIO-0.7.1
+2023-02-09 11:53:17.653551 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 11:53:17.654176 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 11:53:17.654670 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 11:53:17.655099 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 11:53:17.655534 INFO AppDaemon: Added log: Error
+2023-02-09 11:53:17.655978 INFO AppDaemon: Added log: Access
+2023-02-09 11:53:17.656386 INFO AppDaemon: Added log: Diag
+2023-02-09 11:53:17.710504 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 11:53:17.796205 INFO HASS: HASS Plugin Initializing
+2023-02-09 11:53:17.796827 INFO HASS: HASS Plugin initialization complete
+2023-02-09 11:53:17.797844 INFO AppDaemon: Initializing HTTP
+2023-02-09 11:53:17.798760 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 11:53:17.806936 INFO AppDaemon: Starting API
+2023-02-09 11:53:17.812741 INFO AppDaemon: Starting Admin Interface
+2023-02-09 11:53:17.813665 INFO AppDaemon: Starting Dashboards
+2023-02-09 11:53:19.423843 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 11:53:19.426031 INFO AppDaemon: App 'hello_world' added
+2023-02-09 11:53:19.427711 INFO AppDaemon: Found 2 total apps
+2023-02-09 11:53:19.428753 INFO AppDaemon: Starting Apps with 2 workers and 2 pins
+2023-02-09 11:53:19.430876 INFO AppDaemon: Running on port 5050
+2023-02-09 11:53:19.456687 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 11:53:21.406841 INFO HASS: Evaluating startup conditions
+2023-02-09 11:53:42.603740 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 11:53:42.605457 INFO HASS: All startup conditions met
+2023-02-09 11:53:42.658832 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 11:53:42.682707 INFO HASS: Registering new service rpi_gpio/reload
+2023-02-09 11:53:42.753768 INFO HASS: Registering new service notify/persistent_notification
+2023-02-09 11:53:42.769591 INFO HASS: Registering new service tts/google_translate_say
+2023-02-09 11:53:42.772418 INFO HASS: Registering new service tts/clear_cache
+2023-02-09 11:53:42.777308 INFO HASS: Registering new service notify/notify
+2023-02-09 11:53:42.780179 INFO HASS: Registering new service backup/create
+2023-02-09 11:53:42.785822 INFO HASS: Registering new service mqtt/reload
+2023-02-09 11:53:44.467895 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 11:53:44.473746 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 11:53:44.474765 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 11:53:44.475677 INFO AppDaemon: Adding /conf/apps/smazat to module import path
+2023-02-09 11:53:44.496958 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 11:53:44.499001 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 11:53:44.501141 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 11:53:44.503235 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 11:53:44.505369 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 11:53:44.507420 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 11:53:44.509534 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 11:53:44.511525 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 11:53:44.527703 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:53:44.528446 WARNING Error: Unexpected error loading module: /conf/apps/i2c_lcd.py:
+2023-02-09 11:53:44.529054 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:53:44.537949 WARNING Error: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 993, in check_app_updates
+    await utils.run_in_executor(self, self.read_app, mod["name"], mod["reload"])
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/utils.py", line 337, in run_in_executor
+    response = future.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 784, in read_app
+    self.modules[module_name] = importlib.import_module(module_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/conf/apps/i2c_lcd.py", line 2, in <module>
+    import i2c_lcd_driver
+  File "/conf/apps/i2c_lcd_driver.py", line 16, in <module>
+    import smbus
+ModuleNotFoundError: No module named 'smbus'
+
+2023-02-09 11:53:44.538810 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:53:44.539465 WARNING AppDaemon: Removing associated apps:
+2023-02-09 11:53:44.540207 WARNING AppDaemon: i2c_lcd
+2023-02-09 11:53:44.543491 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 11:53:44.545603 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 11:53:44.547731 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 11:53:44.549671 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 11:53:44.551964 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 11:53:44.553928 INFO AppDaemon: Loading App Module: /conf/apps/smazat/hello.py
+2023-02-09 11:53:44.562119 INFO AppDaemon: Initializing app hello_world using class HelloWorld from module hello
+2023-02-09 11:53:44.708993 INFO hello_world: Hello from AppDaemon
+2023-02-09 11:53:44.710925 INFO hello_world: You are now ready to run Apps!
+2023-02-09 11:53:44.725977 INFO AppDaemon: App initialization complete
+2023-02-09 11:54:21.573798 INFO HASS: Registering new service scheduler/run_action
+2023-02-09 11:54:21.589824 INFO HASS: Registering new service script/shutdown_rpi
+2023-02-09 11:54:21.590696 INFO HASS: Registering new service script/restart_rpi
+2023-02-09 11:54:21.591469 INFO HASS: Registering new service script/database_cleaning
+2023-02-09 11:54:21.592253 INFO HASS: Registering new service script/fireplace_cellar_temp_sensor
+2023-02-09 11:54:21.593020 INFO HASS: Registering new service script/fireplace_first_floor_temp_sensor
+2023-02-09 11:54:21.593763 INFO HASS: Registering new service script/fireplace_second_floor_temp_sensor
+2023-02-09 11:54:21.594496 INFO HASS: Registering new service script/hot_water_tank_top_sensor_gas_boiler
+2023-02-09 11:54:21.595222 INFO HASS: Registering new service script/indication_states_of_fireplace_pumps
+2023-02-09 11:54:21.595954 INFO HASS: Registering new service script/turn_off_blue_led
+2023-02-09 11:54:21.596673 INFO HASS: Registering new service script/turn_on_blue_led
+2023-02-09 11:54:21.597384 INFO HASS: Registering new service script/turn_off_gas_boiler
+2023-02-09 11:54:21.598106 INFO HASS: Registering new service script/turn_on_gas_boiler
+2023-02-09 11:54:21.598828 INFO HASS: Registering new service script/keep_same_states
+2023-02-09 11:54:21.599543 INFO HASS: Registering new service script/turn_off_orange_led
+2023-02-09 11:54:21.600261 INFO HASS: Registering new service script/turn_on_orange_led
+2023-02-09 11:54:21.600975 INFO HASS: Registering new service script/turn_off_pump_corridor_first_floor
+2023-02-09 11:54:21.601682 INFO HASS: Registering new service script/turn_on_pump_corridor_first_floor
+2023-02-09 11:54:21.602425 INFO HASS: Registering new service script/turn_off_pump_corridor_second_floor
+2023-02-09 11:54:21.603146 INFO HASS: Registering new service script/turn_on_pump_corridor_second_floor
+2023-02-09 11:54:21.603856 INFO HASS: Registering new service script/turn_off_pump_fireplace_cellar
+2023-02-09 11:54:21.604563 INFO HASS: Registering new service script/turn_on_pump_fireplace_cellar
+2023-02-09 11:54:21.605270 INFO HASS: Registering new service script/turn_off_pump_fireplace_first_floor
+2023-02-09 11:54:21.605982 INFO HASS: Registering new service script/turn_on_pump_fireplace_first_floor
+2023-02-09 11:54:21.606697 INFO HASS: Registering new service script/turn_off_pump_fireplace_second_floor
+2023-02-09 11:54:21.607400 INFO HASS: Registering new service script/turn_on_pump_fireplace_second_floor
+2023-02-09 11:54:21.608098 INFO HASS: Registering new service script/turn_off_red_led
+2023-02-09 11:54:21.608800 INFO HASS: Registering new service script/turn_on_red_led
+2023-02-09 11:54:21.609505 INFO HASS: Registering new service script/hot_water_tank_bottom_sensor_led_indication
+2023-02-09 11:54:21.610233 INFO HASS: Registering new service script/hot_water_tank_middle_sensor_led_indication
+2023-02-09 11:54:21.610952 INFO HASS: Registering new service script/hot_water_tank_top_sensor_led_indication
+2023-02-09 11:54:21.611664 INFO HASS: Registering new service script/pump_second_floor_zones
+2023-02-09 11:54:21.612420 INFO HASS: Registering new service script/turn_on_actuator_second_floor_bathroom
+2023-02-09 11:54:21.613159 INFO HASS: Registering new service script/turn_off_actuator_second_floor_bathroom
+2023-02-09 11:54:21.613870 INFO HASS: Registering new service script/turn_on_actuator_second_floor_corner_room
+2023-02-09 11:54:21.614583 INFO HASS: Registering new service script/turn_off_actuator_second_floor_corner_room
+2023-02-09 11:54:21.615290 INFO HASS: Registering new service script/turn_on_actuator_second_floor_corridor_and_toilet
+2023-02-09 11:54:21.616002 INFO HASS: Registering new service script/turn_off_actuator_second_floor_corridor_and_toilet
+2023-02-09 11:54:21.616707 INFO HASS: Registering new service script/turn_on_actuator_second_floor_kitchen_workroom_living_and_diving_room
+2023-02-09 11:54:21.617414 INFO HASS: Registering new service script/turn_off_actuator_second_floor_kitchen_workroom_living_and_diving_room
+2023-02-09 11:54:21.618123 INFO HASS: Registering new service script/turn_on_actuator_second_floor_middle_room
+2023-02-09 11:54:21.618832 INFO HASS: Registering new service script/turn_off_actuator_second_floor_middle_room
+2023-02-09 11:54:21.619529 INFO HASS: Registering new service script/turn_on_actuator_second_floor_north_room
+2023-02-09 11:54:21.620234 INFO HASS: Registering new service script/turn_off_actuator_second_floor_north_room
+2023-02-09 11:54:21.620948 INFO HASS: Registering new service script/turn_on_actuator_second_floor_parents_bedroom
+2023-02-09 11:54:21.621652 INFO HASS: Registering new service script/turn_off_actuator_second_floor_parents_bedroom
+2023-02-09 11:54:21.622404 INFO HASS: Registering new service script/turn_on_actuator_second_floor_thomas_bedroom
+2023-02-09 11:54:21.623125 INFO HASS: Registering new service script/turn_off_actuator_second_floor_thomas_bedroom
+2023-02-09 11:54:21.623827 INFO HASS: Registering new service script/set_actuators_second_floor
+2023-02-09 11:54:21.624539 INFO HASS: Registering new service script/pump_first_floor_zones
+2023-02-09 11:54:21.625250 INFO HASS: Registering new service script/turn_on_actuator_first_floor_bathroom
+2023-02-09 11:54:21.625956 INFO HASS: Registering new service script/turn_off_actuator_first_floor_bathroom
+2023-02-09 11:54:21.626656 INFO HASS: Registering new service script/turn_on_actuator_first_floor_cellar
+2023-02-09 11:54:21.627367 INFO HASS: Registering new service script/turn_off_actuator_first_floor_cellar
+2023-02-09 11:54:21.628068 INFO HASS: Registering new service script/turn_on_actuator_first_floor_corridor_and_toilet
+2023-02-09 11:54:21.628782 INFO HASS: Registering new service script/turn_off_actuator_first_floor_corridor_and_toilet
+2023-02-09 11:54:21.629494 INFO HASS: Registering new service script/turn_on_actuator_first_floor_garage
+2023-02-09 11:54:21.630194 INFO HASS: Registering new service script/turn_off_actuator_first_floor_garage
+2023-02-09 11:54:21.630887 INFO HASS: Registering new service script/turn_on_actuator_first_floor_living_room_and_kitchen
+2023-02-09 11:54:21.631596 INFO HASS: Registering new service script/turn_off_actuator_first_floor_living_room_and_kitchen
+2023-02-09 11:54:21.632345 INFO HASS: Registering new service script/set_actuators_first_floor
+2023-02-09 11:54:21.633057 INFO HASS: Registering new service script/reload
+2023-02-09 11:54:21.633763 INFO HASS: Registering new service script/turn_on
+2023-02-09 11:54:21.634471 INFO HASS: Registering new service script/turn_off
+2023-02-09 11:54:21.635174 INFO HASS: Registering new service script/toggle
+2023-02-09 11:54:21.636022 INFO HASS: Registering new service switch/turn_off
+2023-02-09 11:54:21.636743 INFO HASS: Registering new service switch/turn_on
+2023-02-09 11:54:21.637446 INFO HASS: Registering new service switch/toggle
+2023-02-09 11:54:21.638297 INFO HASS: Registering new service generic_thermostat/reload
+2023-02-09 11:56:45.492720 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 11:56:45.495798 INFO AppDaemon: Reloading Module: /conf/apps/i2c_lcd.py
+2023-02-09 11:56:45.497130 INFO AppDaemon: Loading App Module: i2c_lcd
+2023-02-09 11:56:45.518156 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:56:45.519298 WARNING Error: Unexpected error loading module: /conf/apps/i2c_lcd.py:
+2023-02-09 11:56:45.519811 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:56:45.521250 WARNING Error: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 770, in read_app
+    importlib.reload(self.modules[module_name])
+KeyError: 'i2c_lcd'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 993, in check_app_updates
+    await utils.run_in_executor(self, self.read_app, mod["name"], mod["reload"])
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/utils.py", line 337, in run_in_executor
+    response = future.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 775, in read_app
+    self.read_app(file)
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 784, in read_app
+    self.modules[module_name] = importlib.import_module(module_name)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/conf/apps/i2c_lcd.py", line 2, in <module>
+    import i2c_lcd_driver
+  File "/conf/apps/i2c_lcd_driver.py", line 16, in <module>
+    import smbus
+ModuleNotFoundError: No module named 'smbus'
+
+2023-02-09 11:56:45.521929 WARNING Error: ------------------------------------------------------------
+2023-02-09 11:56:45.522525 WARNING AppDaemon: Removing associated apps:
+2023-02-09 11:56:45.522993 WARNING AppDaemon: i2c_lcd
+2023-02-09 11:57:30.849867 INFO AppDaemon: SIGTERM Received
+2023-02-09 11:57:30.850734 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 11:57:30.854506 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 11:57:31.255163 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 11:57:31.256514 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 11:57:31.257661 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 11:57:31.258778 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 11:57:31.259882 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 11:57:31.260984 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 11:57:31.262072 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 11:57:31.263235 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 11:57:31.264317 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 11:57:31.265597 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 11:57:31.266911 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 11:57:31.267992 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 11:57:31.269064 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 11:57:31.270128 INFO AppDaemon: Removing module /conf/apps/smazat/hello.py
+2023-02-09 11:57:31.271775 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 11:57:31.274847 INFO AppDaemon: Terminating hello_world
+2023-02-09 11:57:31.278297 INFO AppDaemon: Shutting down webserver
+2023-02-09 11:57:31.282188 INFO AppDaemon: Saving all namespaces
+2023-02-09 11:57:31.283454 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Collecting smbus
+  Downloading smbus-1.1.post2.tar.gz (104 kB)
+Building wheels for collected packages: smbus
+  Building wheel for smbus (setup.py): started
+  Building wheel for smbus (setup.py): finished with status 'done'
+  Created wheel for smbus: filename=smbus-1.1.post2-cp39-cp39-linux_armv7l.whl size=23781 sha256=5a49e2f9a509656aa6a33e1aa76a8ae41e23165cf6cce87ff87866768910e684
+  Stored in directory: /root/.cache/pip/wheels/27/6b/5f/d61caec49a6f3347a083b3e43fa397c353e086e081029f174d
+Successfully built smbus
+Installing collected packages: smbus
+Successfully installed smbus-1.1.post2
+2023-02-09 11:57:42.114723 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 11:57:42.115273 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 11:57:42.115659 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 11:57:42.116014 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 11:57:42.116381 INFO AppDaemon: Added log: Error
+2023-02-09 11:57:42.116722 INFO AppDaemon: Added log: Access
+2023-02-09 11:57:42.117053 INFO AppDaemon: Added log: Diag
+2023-02-09 11:57:42.148774 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 11:57:42.178625 INFO HASS: HASS Plugin Initializing
+2023-02-09 11:57:42.179171 INFO HASS: HASS Plugin initialization complete
+2023-02-09 11:57:42.179980 INFO AppDaemon: Initializing HTTP
+2023-02-09 11:57:42.180705 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 11:57:42.187621 INFO AppDaemon: Starting API
+2023-02-09 11:57:42.194370 INFO AppDaemon: Starting Admin Interface
+2023-02-09 11:57:42.195139 INFO AppDaemon: Starting Dashboards
+2023-02-09 11:57:42.209983 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 11:57:42.232331 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 11:57:42.234341 INFO AppDaemon: App 'hello_world' added
+2023-02-09 11:57:42.235749 INFO AppDaemon: Found 2 total apps
+2023-02-09 11:57:42.236670 INFO AppDaemon: Starting Apps with 2 workers and 2 pins
+2023-02-09 11:57:42.238543 INFO AppDaemon: Running on port 5050
+2023-02-09 11:57:42.266371 INFO HASS: Evaluating startup conditions
+2023-02-09 11:57:42.271621 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 11:57:42.272373 INFO HASS: All startup conditions met
+2023-02-09 11:57:42.336165 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 11:57:44.276664 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 11:57:44.285467 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 11:57:44.287102 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 11:57:44.288432 INFO AppDaemon: Adding /conf/apps/smazat to module import path
+2023-02-09 11:57:44.317875 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 11:57:44.320525 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 11:57:44.323330 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 11:57:44.325887 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 11:57:44.328636 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 11:57:44.331136 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 11:57:44.333921 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 11:57:44.336407 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 11:57:44.356654 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 11:57:44.359334 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 11:57:44.362007 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 11:57:44.364628 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 11:57:44.367293 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 11:57:44.369823 INFO AppDaemon: Loading App Module: /conf/apps/smazat/hello.py
+2023-02-09 11:57:44.377643 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 11:57:44.382848 INFO AppDaemon: Initializing app hello_world using class HelloWorld from module hello
+2023-02-09 11:57:44.523634 INFO hello_world: Hello from AppDaemon
+2023-02-09 11:57:44.525149 INFO hello_world: You are now ready to run Apps!
+2023-02-09 11:57:44.534071 INFO AppDaemon: App initialization complete
+2023-02-09 12:00:10.387052 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:00:10.387819 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:00:10.395794 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:00:10.878048 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:00:10.878756 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:00:10.879372 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:00:10.879949 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:00:10.880515 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:00:10.881077 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:00:10.881635 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:00:10.882279 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:00:10.882852 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:00:10.883406 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:00:10.883950 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:00:10.884498 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:00:10.885040 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:00:10.885576 INFO AppDaemon: Removing module /conf/apps/smazat/hello.py
+2023-02-09 12:00:10.886533 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:00:10.888741 INFO AppDaemon: Terminating hello_world
+2023-02-09 12:00:10.890965 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:00:10.894152 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:00:10.894841 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+2023-02-09 12:00:17.293714 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 12:00:17.294222 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 12:00:17.294468 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 12:00:17.294760 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 12:00:17.295184 INFO AppDaemon: Added log: Error
+2023-02-09 12:00:17.295402 INFO AppDaemon: Added log: Access
+2023-02-09 12:00:17.295767 INFO AppDaemon: Added log: Diag
+2023-02-09 12:00:17.327870 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 12:00:17.357724 INFO HASS: HASS Plugin Initializing
+2023-02-09 12:00:17.358023 INFO HASS: HASS Plugin initialization complete
+2023-02-09 12:00:17.358899 INFO AppDaemon: Initializing HTTP
+2023-02-09 12:00:17.359558 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 12:00:17.366364 INFO AppDaemon: Starting API
+2023-02-09 12:00:17.372926 INFO AppDaemon: Starting Admin Interface
+2023-02-09 12:00:17.373710 INFO AppDaemon: Starting Dashboards
+2023-02-09 12:00:17.388371 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 12:00:17.410844 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 12:00:17.412797 INFO AppDaemon: App 'hello_world' added
+2023-02-09 12:00:17.414265 INFO AppDaemon: Found 2 total apps
+2023-02-09 12:00:17.415074 INFO AppDaemon: Starting Apps with 2 workers and 2 pins
+2023-02-09 12:00:17.416836 INFO AppDaemon: Running on port 5050
+2023-02-09 12:00:17.445717 INFO HASS: Evaluating startup conditions
+2023-02-09 12:00:17.451202 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 12:00:17.451796 INFO HASS: All startup conditions met
+2023-02-09 12:00:17.520695 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 12:00:19.455506 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 12:00:19.464358 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 12:00:19.466255 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 12:00:19.467885 INFO AppDaemon: Adding /conf/apps/smazat to module import path
+2023-02-09 12:00:19.500625 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 12:00:19.504290 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 12:00:19.507186 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 12:00:19.510033 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 12:00:19.512925 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 12:00:19.515784 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 12:00:19.518616 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 12:00:19.521422 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:00:19.532177 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 12:00:19.533795 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 12:00:19.535146 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 12:00:19.536614 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 12:00:19.537987 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 12:00:19.539433 INFO AppDaemon: Loading App Module: /conf/apps/smazat/hello.py
+2023-02-09 12:00:19.544155 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:00:19.546742 INFO AppDaemon: Initializing app hello_world using class HelloWorld from module hello
+2023-02-09 12:00:19.683401 INFO hello_world: Hello from AppDaemon
+2023-02-09 12:00:19.684997 INFO hello_world: You are now ready to run Apps!
+2023-02-09 12:00:19.693591 INFO AppDaemon: App initialization complete
+2023-02-09 12:03:33.860562 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:03:33.861201 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:03:33.864880 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:03:34.737711 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:03:34.738698 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:03:34.739596 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:03:34.740441 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:03:34.741245 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:03:34.742045 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:03:34.742911 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:03:34.743703 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:03:34.744500 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:03:34.745293 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:03:34.746118 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:03:34.746905 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:03:34.747682 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:03:34.748452 INFO AppDaemon: Removing module /conf/apps/smazat/hello.py
+2023-02-09 12:03:34.749808 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:03:34.752984 INFO AppDaemon: Terminating hello_world
+2023-02-09 12:03:34.756094 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:03:34.760146 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:03:34.761051 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+2023-02-09 12:04:08.789814 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 12:04:08.790304 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 12:04:08.790682 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 12:04:08.791028 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 12:04:08.791387 INFO AppDaemon: Added log: Error
+2023-02-09 12:04:08.791713 INFO AppDaemon: Added log: Access
+2023-02-09 12:04:08.792041 INFO AppDaemon: Added log: Diag
+2023-02-09 12:04:08.825771 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 12:04:08.856363 INFO HASS: HASS Plugin Initializing
+2023-02-09 12:04:08.856873 INFO HASS: HASS Plugin initialization complete
+2023-02-09 12:04:08.857682 INFO AppDaemon: Initializing HTTP
+2023-02-09 12:04:08.858406 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 12:04:08.865474 INFO AppDaemon: Starting API
+2023-02-09 12:04:08.872280 INFO AppDaemon: Starting Admin Interface
+2023-02-09 12:04:08.873033 INFO AppDaemon: Starting Dashboards
+2023-02-09 12:04:08.888790 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 12:04:08.910494 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 12:04:08.912370 INFO AppDaemon: App 'hello_world' added
+2023-02-09 12:04:08.913595 INFO AppDaemon: Found 2 total apps
+2023-02-09 12:04:08.914312 INFO AppDaemon: Starting Apps with 2 workers and 2 pins
+2023-02-09 12:04:08.915761 INFO AppDaemon: Running on port 5050
+2023-02-09 12:04:08.943070 INFO HASS: Evaluating startup conditions
+2023-02-09 12:04:08.948143 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 12:04:08.948608 INFO HASS: All startup conditions met
+2023-02-09 12:04:09.010534 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 12:04:10.950080 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 12:04:10.956786 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 12:04:10.958323 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 12:04:10.959655 INFO AppDaemon: Adding /conf/apps/smazat to module import path
+2023-02-09 12:04:10.985654 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 12:04:10.988410 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 12:04:10.991058 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 12:04:10.993470 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 12:04:10.996069 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 12:04:10.998419 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 12:04:11.001000 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 12:04:11.003400 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:04:11.031122 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 12:04:11.033488 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 12:04:11.035774 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 12:04:11.037798 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 12:04:11.039996 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 12:04:11.041974 INFO AppDaemon: Loading App Module: /conf/apps/smazat/hello.py
+2023-02-09 12:04:11.048384 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:04:11.052346 INFO AppDaemon: Initializing app hello_world using class HelloWorld from module hello
+2023-02-09 12:04:11.209617 INFO hello_world: Hello from AppDaemon
+2023-02-09 12:04:11.211245 INFO hello_world: You are now ready to run Apps!
+2023-02-09 12:04:11.219969 INFO AppDaemon: App initialization complete
+2023-02-09 12:05:09.079847 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:05:09.080335 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:05:09.084115 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:05:09.343712 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:05:09.344436 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:05:09.344903 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:05:09.345425 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:05:09.345870 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:05:09.346377 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:05:09.346812 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:05:09.347317 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:05:09.347753 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:05:09.348253 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:05:09.348687 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:05:09.349184 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:05:09.349603 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:05:09.350147 INFO AppDaemon: Removing module /conf/apps/smazat/hello.py
+2023-02-09 12:05:09.350826 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:05:09.352358 INFO AppDaemon: Terminating hello_world
+2023-02-09 12:05:09.353838 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:05:10.067246 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:05:10.068199 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+2023-02-09 12:05:48.639725 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 12:05:48.640021 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 12:05:48.640470 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 12:05:48.640738 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 12:05:48.641095 INFO AppDaemon: Added log: Error
+2023-02-09 12:05:48.641342 INFO AppDaemon: Added log: Access
+2023-02-09 12:05:48.641657 INFO AppDaemon: Added log: Diag
+2023-02-09 12:05:48.675260 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 12:05:48.705566 INFO HASS: HASS Plugin Initializing
+2023-02-09 12:05:48.705936 INFO HASS: HASS Plugin initialization complete
+2023-02-09 12:05:48.706749 INFO AppDaemon: Initializing HTTP
+2023-02-09 12:05:48.707367 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 12:05:48.714438 INFO AppDaemon: Starting API
+2023-02-09 12:05:48.721003 INFO AppDaemon: Starting Admin Interface
+2023-02-09 12:05:48.721762 INFO AppDaemon: Starting Dashboards
+2023-02-09 12:05:48.737569 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 12:05:48.760282 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 12:05:48.762361 INFO AppDaemon: App 'hello_world' added
+2023-02-09 12:05:48.763758 INFO AppDaemon: Found 2 total apps
+2023-02-09 12:05:48.764662 INFO AppDaemon: Starting Apps with 2 workers and 2 pins
+2023-02-09 12:05:48.766382 INFO AppDaemon: Running on port 5050
+2023-02-09 12:05:48.795452 INFO HASS: Evaluating startup conditions
+2023-02-09 12:05:48.800802 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 12:05:48.801473 INFO HASS: All startup conditions met
+2023-02-09 12:05:48.865280 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 12:05:50.801752 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 12:05:50.805544 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 12:05:50.806453 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 12:05:50.807178 INFO AppDaemon: Adding /conf/apps/smazat to module import path
+2023-02-09 12:05:50.820856 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 12:05:50.822270 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 12:05:50.823606 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 12:05:50.824904 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 12:05:50.826184 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 12:05:50.827473 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 12:05:50.828740 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 12:05:50.830030 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:05:50.840039 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 12:05:50.841416 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 12:05:50.842805 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 12:05:50.844133 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 12:05:50.845439 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 12:05:50.846740 INFO AppDaemon: Loading App Module: /conf/apps/smazat/hello.py
+2023-02-09 12:05:50.850858 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:05:50.853580 INFO AppDaemon: Initializing app hello_world using class HelloWorld from module hello
+2023-02-09 12:05:51.032442 INFO hello_world: Hello from AppDaemon
+2023-02-09 12:05:51.034025 INFO hello_world: You are now ready to run Apps!
+2023-02-09 12:05:51.042562 INFO AppDaemon: App initialization complete
+2023-02-09 12:07:40.594665 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:07:40.595641 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:07:40.601867 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:07:41.259100 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:07:41.259936 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:07:41.260630 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:07:41.261279 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:07:41.261915 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:07:41.262608 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:07:41.263241 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:07:41.263861 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:07:41.264479 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:07:41.265093 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:07:41.265698 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:07:41.266310 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:07:41.266935 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:07:41.267545 INFO AppDaemon: Removing module /conf/apps/smazat/hello.py
+2023-02-09 12:07:41.268555 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:07:41.270690 INFO AppDaemon: Terminating hello_world
+2023-02-09 12:07:41.272894 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:07:41.275926 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:07:41.276672 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+2023-02-09 12:09:29.340764 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 12:09:29.341107 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 12:09:29.341617 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 12:09:29.341940 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 12:09:29.342430 INFO AppDaemon: Added log: Error
+2023-02-09 12:09:29.342762 INFO AppDaemon: Added log: Access
+2023-02-09 12:09:29.343156 INFO AppDaemon: Added log: Diag
+2023-02-09 12:09:29.384280 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 12:09:29.423034 INFO HASS: HASS Plugin Initializing
+2023-02-09 12:09:29.423432 INFO HASS: HASS Plugin initialization complete
+2023-02-09 12:09:29.424363 INFO AppDaemon: Initializing HTTP
+2023-02-09 12:09:29.425110 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 12:09:29.434711 INFO AppDaemon: Starting API
+2023-02-09 12:09:29.443252 INFO AppDaemon: Starting Admin Interface
+2023-02-09 12:09:29.444167 INFO AppDaemon: Starting Dashboards
+2023-02-09 12:09:32.202726 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 12:09:32.203990 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 12:09:32.205779 INFO AppDaemon: Found 1 total apps
+2023-02-09 12:09:32.206804 INFO AppDaemon: Starting Apps with 1 workers and 1 pins
+2023-02-09 12:09:32.208669 INFO AppDaemon: Running on port 5050
+2023-02-09 12:09:34.001235 INFO HASS: Evaluating startup conditions
+2023-02-09 12:09:36.202895 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 12:09:36.203509 INFO HASS: All startup conditions met
+2023-02-09 12:09:36.327329 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 12:09:36.581820 INFO HASS: Registering new service rpi_gpio/reload
+2023-02-09 12:09:36.648849 INFO HASS: Registering new service tts/google_translate_say
+2023-02-09 12:09:36.652786 INFO HASS: Registering new service notify/persistent_notification
+2023-02-09 12:09:36.655109 INFO HASS: Registering new service tts/clear_cache
+2023-02-09 12:09:36.670161 INFO HASS: Registering new service notify/notify
+2023-02-09 12:09:36.783672 INFO HASS: Registering new service script/shutdown_rpi
+2023-02-09 12:09:36.788406 INFO HASS: Registering new service script/restart_rpi
+2023-02-09 12:09:36.793224 INFO HASS: Registering new service script/database_cleaning
+2023-02-09 12:09:36.797923 INFO HASS: Registering new service script/fireplace_cellar_temp_sensor
+2023-02-09 12:09:36.803353 INFO HASS: Registering new service script/fireplace_first_floor_temp_sensor
+2023-02-09 12:09:36.808441 INFO HASS: Registering new service script/fireplace_second_floor_temp_sensor
+2023-02-09 12:09:36.813798 INFO HASS: Registering new service script/hot_water_tank_top_sensor_gas_boiler
+2023-02-09 12:09:36.818840 INFO HASS: Registering new service script/indication_states_of_fireplace_pumps
+2023-02-09 12:09:36.824161 INFO HASS: Registering new service script/turn_off_blue_led
+2023-02-09 12:09:36.829240 INFO HASS: Registering new service script/turn_on_blue_led
+2023-02-09 12:09:36.834784 INFO HASS: Registering new service script/turn_off_gas_boiler
+2023-02-09 12:09:36.839822 INFO HASS: Registering new service script/turn_on_gas_boiler
+2023-02-09 12:09:36.845072 INFO HASS: Registering new service script/keep_same_states
+2023-02-09 12:09:36.850016 INFO HASS: Registering new service script/turn_off_orange_led
+2023-02-09 12:09:36.855237 INFO HASS: Registering new service script/turn_on_orange_led
+2023-02-09 12:09:36.860316 INFO HASS: Registering new service script/turn_off_pump_corridor_first_floor
+2023-02-09 12:09:36.866165 INFO HASS: Registering new service script/turn_on_pump_corridor_first_floor
+2023-02-09 12:09:36.871494 INFO HASS: Registering new service script/turn_off_pump_corridor_second_floor
+2023-02-09 12:09:36.876679 INFO HASS: Registering new service script/turn_on_pump_corridor_second_floor
+2023-02-09 12:09:36.881653 INFO HASS: Registering new service script/turn_off_pump_fireplace_cellar
+2023-02-09 12:09:36.886815 INFO HASS: Registering new service script/turn_on_pump_fireplace_cellar
+2023-02-09 12:09:36.891716 INFO HASS: Registering new service script/turn_off_pump_fireplace_first_floor
+2023-02-09 12:09:36.896941 INFO HASS: Registering new service script/turn_on_pump_fireplace_first_floor
+2023-02-09 12:09:36.901896 INFO HASS: Registering new service script/turn_off_pump_fireplace_second_floor
+2023-02-09 12:09:36.907141 INFO HASS: Registering new service script/turn_on_pump_fireplace_second_floor
+2023-02-09 12:09:36.912120 INFO HASS: Registering new service script/turn_off_red_led
+2023-02-09 12:09:36.917202 INFO HASS: Registering new service script/turn_on_red_led
+2023-02-09 12:09:36.922437 INFO HASS: Registering new service script/hot_water_tank_bottom_sensor_led_indication
+2023-02-09 12:09:36.928469 INFO HASS: Registering new service script/hot_water_tank_middle_sensor_led_indication
+2023-02-09 12:09:36.945387 INFO HASS: Registering new service script/hot_water_tank_top_sensor_led_indication
+2023-02-09 12:09:36.950355 INFO HASS: Registering new service script/pump_second_floor_zones
+2023-02-09 12:09:36.955453 INFO HASS: Registering new service script/turn_on_actuator_second_floor_bathroom
+2023-02-09 12:09:36.962627 INFO HASS: Registering new service script/turn_off_actuator_second_floor_bathroom
+2023-02-09 12:09:36.971022 INFO HASS: Registering new service script/turn_on_actuator_second_floor_corner_room
+2023-02-09 12:09:36.980500 INFO HASS: Registering new service script/turn_off_actuator_second_floor_corner_room
+2023-02-09 12:09:36.986078 INFO HASS: Registering new service script/turn_on_actuator_second_floor_corridor_and_toilet
+2023-02-09 12:09:36.991965 INFO HASS: Registering new service script/turn_off_actuator_second_floor_corridor_and_toilet
+2023-02-09 12:09:36.997826 INFO HASS: Registering new service script/turn_on_actuator_second_floor_kitchen_workroom_living_and_diving_room
+2023-02-09 12:09:37.003851 INFO HASS: Registering new service script/turn_off_actuator_second_floor_kitchen_workroom_living_and_diving_room
+2023-02-09 12:09:37.010002 INFO HASS: Registering new service script/turn_on_actuator_second_floor_middle_room
+2023-02-09 12:09:37.016524 INFO HASS: Registering new service script/turn_off_actuator_second_floor_middle_room
+2023-02-09 12:09:37.022736 INFO HASS: Registering new service script/turn_on_actuator_second_floor_north_room
+2023-02-09 12:09:37.028458 INFO HASS: Registering new service script/turn_off_actuator_second_floor_north_room
+2023-02-09 12:09:37.034153 INFO HASS: Registering new service script/turn_on_actuator_second_floor_parents_bedroom
+2023-02-09 12:09:37.039865 INFO HASS: Registering new service script/turn_off_actuator_second_floor_parents_bedroom
+2023-02-09 12:09:37.045126 INFO HASS: Registering new service script/turn_on_actuator_second_floor_thomas_bedroom
+2023-02-09 12:09:37.051275 INFO HASS: Registering new service script/turn_off_actuator_second_floor_thomas_bedroom
+2023-02-09 12:09:37.058211 INFO HASS: Registering new service script/set_actuators_second_floor
+2023-02-09 12:09:37.063319 INFO HASS: Registering new service script/pump_first_floor_zones
+2023-02-09 12:09:37.068487 INFO HASS: Registering new service script/turn_on_actuator_first_floor_bathroom
+2023-02-09 12:09:37.073747 INFO HASS: Registering new service script/turn_off_actuator_first_floor_bathroom
+2023-02-09 12:09:37.078742 INFO HASS: Registering new service script/turn_on_actuator_first_floor_cellar
+2023-02-09 12:09:37.083898 INFO HASS: Registering new service script/turn_off_actuator_first_floor_cellar
+2023-02-09 12:09:37.089131 INFO HASS: Registering new service script/turn_on_actuator_first_floor_corridor_and_toilet
+2023-02-09 12:09:37.094952 INFO HASS: Registering new service script/turn_off_actuator_first_floor_corridor_and_toilet
+2023-02-09 12:09:37.101006 INFO HASS: Registering new service script/turn_on_actuator_first_floor_garage
+2023-02-09 12:09:37.106136 INFO HASS: Registering new service script/turn_off_actuator_first_floor_garage
+2023-02-09 12:09:37.111177 INFO HASS: Registering new service script/turn_on_actuator_first_floor_living_room_and_kitchen
+2023-02-09 12:09:37.116524 INFO HASS: Registering new service script/turn_off_actuator_first_floor_living_room_and_kitchen
+2023-02-09 12:09:37.122344 INFO HASS: Registering new service script/set_actuators_first_floor
+2023-02-09 12:09:37.127869 INFO HASS: Registering new service script/reload
+2023-02-09 12:09:37.131215 INFO HASS: Registering new service script/turn_on
+2023-02-09 12:09:37.134582 INFO HASS: Registering new service script/turn_off
+2023-02-09 12:09:37.137907 INFO HASS: Registering new service script/toggle
+2023-02-09 12:09:37.142750 INFO HASS: Registering new service mqtt/reload
+2023-02-09 12:09:37.147160 INFO HASS: Registering new service backup/create
+2023-02-09 12:09:37.594868 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 12:09:37.599498 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 12:09:37.600516 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 12:09:37.618118 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 12:09:37.619791 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 12:09:37.621489 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 12:09:37.623139 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 12:09:37.624863 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 12:09:37.626484 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 12:09:37.628150 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 12:09:37.629764 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:09:37.648714 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 12:09:37.650521 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 12:09:37.651954 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 12:09:37.653395 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 12:09:37.654800 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 12:09:37.655948 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:09:37.667731 INFO AppDaemon: App initialization complete
+2023-02-09 12:12:48.066505 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:12:48.071791 INFO AppDaemon: Reloading Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:12:48.076518 WARNING Error: ------------------------------------------------------------
+2023-02-09 12:12:48.077213 WARNING Error: Unexpected error loading module: /conf/apps/i2c_lcd.py:
+2023-02-09 12:12:48.077782 WARNING Error: ------------------------------------------------------------
+2023-02-09 12:12:48.083070 WARNING Error: Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 993, in check_app_updates
+    await utils.run_in_executor(self, self.read_app, mod["name"], mod["reload"])
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/utils.py", line 337, in run_in_executor
+    response = future.result()
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/local/lib/python3.9/site-packages/appdaemon/app_management.py", line 770, in read_app
+    importlib.reload(self.modules[module_name])
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 169, in reload
+    _bootstrap._exec(spec, module)
+  File "<frozen importlib._bootstrap>", line 613, in _exec
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/conf/apps/i2c_lcd.py", line 33
+    first_floor_lcd.lcd_load_custom_chars(degree)
+IndentationError: unexpected indent
+
+2023-02-09 12:12:48.083742 WARNING Error: ------------------------------------------------------------
+2023-02-09 12:12:48.084349 WARNING AppDaemon: Removing associated apps:
+2023-02-09 12:12:48.084972 WARNING AppDaemon: i2c_lcd
+2023-02-09 12:12:52.198399 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:12:52.203957 INFO AppDaemon: Reloading Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:12:52.210936 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:12:54.303676 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:12:54.310594 INFO AppDaemon: Reloading Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:12:54.318837 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:13:01.731525 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:13:01.735898 INFO AppDaemon: Reloading Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:13:01.741105 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:13:06.679870 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:13:06.680433 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:13:06.684114 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:13:06.884677 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:13:06.885110 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:13:06.885474 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:13:06.885815 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:13:06.886152 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:13:06.886480 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:13:06.886804 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:13:06.887131 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:13:06.887457 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:13:06.887776 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:13:06.888096 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:13:06.888419 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:13:06.888746 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:13:06.889291 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:13:06.890774 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:13:06.892040 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:13:06.892537 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+2023-02-09 12:13:13.236298 INFO AppDaemon: AppDaemon Version 4.2.1 starting
+2023-02-09 12:13:13.236891 INFO AppDaemon: Python version is 3.9.9
+2023-02-09 12:13:13.237234 INFO AppDaemon: Configuration read from: /conf/appdaemon.yaml
+2023-02-09 12:13:13.237574 INFO AppDaemon: Added log: AppDaemon
+2023-02-09 12:13:13.237995 INFO AppDaemon: Added log: Error
+2023-02-09 12:13:13.238295 INFO AppDaemon: Added log: Access
+2023-02-09 12:13:13.241382 INFO AppDaemon: Added log: Diag
+2023-02-09 12:13:13.273683 INFO AppDaemon: Loading Plugin HASS using class HassPlugin from module hassplugin
+2023-02-09 12:13:13.304204 INFO HASS: HASS Plugin Initializing
+2023-02-09 12:13:13.304581 INFO HASS: HASS Plugin initialization complete
+2023-02-09 12:13:13.305377 INFO AppDaemon: Initializing HTTP
+2023-02-09 12:13:13.306036 INFO AppDaemon: Using 'ws' for event stream
+2023-02-09 12:13:13.312847 INFO AppDaemon: Starting API
+2023-02-09 12:13:13.319467 INFO AppDaemon: Starting Admin Interface
+2023-02-09 12:13:13.320133 INFO AppDaemon: Starting Dashboards
+2023-02-09 12:13:13.334961 INFO HASS: Connected to Home Assistant 2023.2.2
+2023-02-09 12:13:13.354580 INFO AppDaemon: App 'i2c_lcd' added
+2023-02-09 12:13:13.356247 INFO AppDaemon: Found 1 total apps
+2023-02-09 12:13:13.357113 INFO AppDaemon: Starting Apps with 1 workers and 1 pins
+2023-02-09 12:13:13.358582 INFO AppDaemon: Running on port 5050
+2023-02-09 12:13:13.390034 INFO HASS: Evaluating startup conditions
+2023-02-09 12:13:13.395620 INFO HASS: Startup condition met: hass state=RUNNING
+2023-02-09 12:13:13.396348 INFO HASS: All startup conditions met
+2023-02-09 12:13:13.461342 INFO AppDaemon: Got initial state from namespace default
+2023-02-09 12:13:15.372842 INFO AppDaemon: Scheduler running in realtime
+2023-02-09 12:13:15.397272 INFO AppDaemon: Adding /conf/apps to module import path
+2023-02-09 12:13:15.399688 INFO AppDaemon: Adding /conf/apps/pca9685 to module import path
+2023-02-09 12:13:15.503851 WARNING AppDaemon: No app description found for: /conf/apps/i2c_lcd_driver.py - ignoring
+2023-02-09 12:13:15.508495 WARNING AppDaemon: No app description found for: /conf/apps/timeslot.py - ignoring
+2023-02-09 12:13:15.512134 WARNING AppDaemon: No app description found for: /conf/apps/read_thermostat.py - ignoring
+2023-02-09 12:13:15.515207 WARNING AppDaemon: No app description found for: /conf/apps/linearaprroximation.py - ignoring
+2023-02-09 12:13:15.517291 WARNING AppDaemon: No app description found for: /conf/apps/temp_max31850k.py - ignoring
+2023-02-09 12:13:15.520023 WARNING AppDaemon: No app description found for: /conf/apps/temp_18b20.py - ignoring
+2023-02-09 12:13:15.522470 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_first_floor.py - ignoring
+2023-02-09 12:13:15.526473 INFO AppDaemon: Loading App Module: /conf/apps/i2c_lcd.py
+2023-02-09 12:13:15.555332 WARNING AppDaemon: No app description found for: /conf/apps/thermoelectric_actuators_second_floor.py - ignoring
+2023-02-09 12:13:15.557786 WARNING AppDaemon: No app description found for: /conf/apps/database.py - ignoring
+2023-02-09 12:13:15.562293 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/pca9685.py - ignoring
+2023-02-09 12:13:15.566009 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/__init__.py - ignoring
+2023-02-09 12:13:15.568452 WARNING AppDaemon: No app description found for: /conf/apps/pca9685/i2c_driver.py - ignoring
+2023-02-09 12:13:15.572647 INFO AppDaemon: Initializing app i2c_lcd using class I2CLCD from module i2c_lcd
+2023-02-09 12:13:15.597683 INFO AppDaemon: App initialization complete
+2023-02-09 12:17:44.381660 INFO AppDaemon: SIGTERM Received
+2023-02-09 12:17:44.382218 INFO AppDaemon: AppDaemon is shutting down
+2023-02-09 12:17:44.385922 INFO HASS: Disconnecting from Home Assistant
+2023-02-09 12:17:45.083762 INFO AppDaemon: Removing module /conf/apps/i2c_lcd_driver.py
+2023-02-09 12:17:45.085038 INFO AppDaemon: Removing module /conf/apps/timeslot.py
+2023-02-09 12:17:45.086126 INFO AppDaemon: Removing module /conf/apps/read_thermostat.py
+2023-02-09 12:17:45.087187 INFO AppDaemon: Removing module /conf/apps/linearaprroximation.py
+2023-02-09 12:17:45.088237 INFO AppDaemon: Removing module /conf/apps/temp_max31850k.py
+2023-02-09 12:17:45.089274 INFO AppDaemon: Removing module /conf/apps/temp_18b20.py
+2023-02-09 12:17:45.090301 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_first_floor.py
+2023-02-09 12:17:45.091334 INFO AppDaemon: Removing module /conf/apps/i2c_lcd.py
+2023-02-09 12:17:45.092409 INFO AppDaemon: Removing module /conf/apps/thermoelectric_actuators_second_floor.py
+2023-02-09 12:17:45.093459 INFO AppDaemon: Removing module /conf/apps/database.py
+2023-02-09 12:17:45.094488 INFO AppDaemon: Removing module /conf/apps/pca9685/pca9685.py
+2023-02-09 12:17:45.095507 INFO AppDaemon: Removing module /conf/apps/pca9685/__init__.py
+2023-02-09 12:17:45.096524 INFO AppDaemon: Removing module /conf/apps/pca9685/i2c_driver.py
+2023-02-09 12:17:45.098049 INFO AppDaemon: Terminating i2c_lcd
+2023-02-09 12:17:45.101760 INFO AppDaemon: Shutting down webserver
+2023-02-09 12:17:45.105364 INFO AppDaemon: Saving all namespaces
+2023-02-09 12:17:45.106467 INFO AppDaemon: AppDaemon is stopped.
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+Collecting RPiMCP23S17
+  Downloading RPiMCP23S17-1.0.0-py3-none-any.whl (6.3 kB)
+Collecting spidev
+  Downloading spidev-3.6-cp39-cp39-linux_armv7l.whl (40 kB)
+Installing collected packages: spidev, RPiMCP23S17
+Successfully installed RPiMCP23S17-1.0.0 spidev-3.6
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (0.7.1)
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (1.1.post2)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from RPiMCP23S17->-r /conf/CONF/requirements.txt (line 3)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/armv7/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/armv7/APKINDEX.tar.gz
+OK: 781 MiB in 69 packages
+Requirement already satisfied: smbus in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 1)) (1.1.post2)
+Requirement already satisfied: RPi.GPIO in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 2)) (0.7.1)
+Requirement already satisfied: RPiMCP23S17 in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 3)) (1.0.0)
+Requirement already satisfied: spidev in /usr/local/lib/python3.9/site-packages (from -r /conf/CONF/requirements.txt (line 4)) (3.6)

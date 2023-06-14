@@ -1,0 +1,13 @@
+
+hot_water_tank_top_sensor_led_indication:
+  alias: 'Control of blue LED'
+  description: 'Control of a blue LED according to a temp. sensor in a top part of hot water tank'
+  sequence:
+    - service_template: >
+        {%- set hot_water_tank_top_sensor = states('sensor.hot_water_tank_top') | int -%}
+        {%- set led_indication_min_value_temp_top_sensor = states('input_number.led_indication_min_value_temp_top_sensor') | float -%}
+        {%- if hot_water_tank_top_sensor < led_indication_min_value_temp_top_sensor -%}
+          script.turn_on_blue_led
+        {%- else -%}
+          script.turn_off_blue_led
+        {%- endif -%}

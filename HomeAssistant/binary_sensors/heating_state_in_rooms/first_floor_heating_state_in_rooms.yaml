@@ -1,0 +1,50 @@
+# Sensors for only read heating states in rooms for first floor. Primary for floor plan.
+- platform: template
+  sensors:
+    first_floor_heating_state_corridor_and_toilet:
+      friendly_name: 'Stav vytápění – chodba/toaleta (první patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_first_floor_corridor_and_toilet', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}     
+    first_floor_heating_state_bathroom:
+      friendly_name: 'Stav vytápění – koupelna (první patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_first_floor_bathroom_ladder', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_bathroom', 'on') -%}   
+          on
+        {%- else -%}
+          off
+        {%- endif -%} 
+    first_floor_heating_state_living_room_and_kitchen:
+      friendly_name: 'Stav vytápění – obývací pokoj a kuchyň (první patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_first_floor_kitchen_door', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_kitchen_windows', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_living_room_1', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_living_room_2', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_living_room_3', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}        
+    first_floor_heating_state_cellar:
+      friendly_name: 'Stav vytápění – sklep (první patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_first_floor_cellar_ladder', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}        
+    first_floor_heating_state_garage:
+      friendly_name: 'Stav vytápění – garáž (první patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_first_floor_garage_1', 'on') or
+               is_state('input_boolean.thermo_actuator_first_floor_garage_2', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%} 
+      

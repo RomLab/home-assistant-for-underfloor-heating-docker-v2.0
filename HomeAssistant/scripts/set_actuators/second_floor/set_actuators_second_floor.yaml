@@ -1,0 +1,47 @@
+set_actuators_second_floor:
+  alias: 'Set actuators for rooms in a second floor'
+  description: 'Set actuators for rooms in a second floor'
+  sequence:
+    # Bathroom
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_bathroom
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_bathroom
+    # Kitchen, workroom, living and diving room
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_kitchen_workroom_living_and_diving_room
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_kitchen_workroom_living_and_diving_room
+    # Thomas bedroom
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_thomas_bedroom
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_thomas_bedroom
+    # North room
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_north_room
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_north_room
+    # Middle room
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_middle_room
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_middle_room
+    # Corner room
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_corner_room
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_corner_room
+    # Corridor and toilet
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_corridor_and_toilet
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_corridor_and_toilet
+    # Parents bedroom
+    - service: script.turn_on
+      entity_id: script.turn_on_actuator_second_floor_parents_bedroom
+    - service: script.turn_on
+      entity_id: script.turn_off_actuator_second_floor_parents_bedroom
+    # Control second pump from zones
+    - service: script.turn_on
+      entity_id: script.pump_second_floor_zones

@@ -1,0 +1,45 @@
+turn_on_actuator_first_floor_bathroom:
+  alias: 'Turn on actuators for a bathroom in a first floor'
+  description: 'Turn on actuators for a bathroom in a first floor'
+  sequence:
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_first_floor', '1') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_room_thermostat', 'on') and is_state('input_boolean.zone_first_floor_bathroom', 'on') and is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'on') and is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans', 'on') and is_state('input_boolean.zone_first_floor_bathroom', 'on') and is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'on') and is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.first_floor_bathroom_forecast', 'heating') and is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'on') and is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.first_floor_bathroom_forecast', 'off') and is_state('input_boolean.zone_first_floor_bathroom', 'on') and is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'on') and is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'off') }}"
+    - service: input_boolean.turn_on
+      target:
+        entity_id:  
+          - input_boolean.thermo_actuator_first_floor_bathroom
+          - input_boolean.thermo_actuator_first_floor_bathroom_ladder
+
+turn_off_actuator_first_floor_bathroom:
+  alias: 'Turn off actuators for a bathroom in a first floor'
+  description: 'Turn off actuators for a bathroom in a first floor'
+  sequence:
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'off') and is_state('input_boolean.manual_control_room_thermostat', 'off') and is_state('input_boolean.control_according_to_plans', 'off') and is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_first_floor', '0') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_room_thermostat', 'on') and (is_state('input_boolean.zone_first_floor_bathroom', 'off') or (is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'off') or is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans', 'on') and (is_state('input_boolean.zone_first_floor_bathroom', 'off') or (is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'off') or is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and (is_state('sensor.first_floor_bathroom_forecast', 'not_heating') or (is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'off') or is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and ((is_state('sensor.first_floor_bathroom_forecast', 'off') and is_state('input_boolean.zone_first_floor_bathroom', 'off')) or (is_state('binary_sensor.first_floor_connection_of_thermostat_bathroom', 'off') or is_state('binary_sensor.first_floor_detection_of_open_window_bathroom', 'on'))) }}"
+    - service: input_boolean.turn_off
+      target:
+        entity_id: 
+          - input_boolean.thermo_actuator_first_floor_bathroom
+          - input_boolean.thermo_actuator_first_floor_bathroom_ladder

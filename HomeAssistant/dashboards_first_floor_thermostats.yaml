@@ -1,0 +1,74 @@
+views:
+  - title: 'Přízemí – Termostaty'
+    path: prizemi-termostaty
+    cards:
+      - type: vertical-stack
+        title: 'Chodba a toaleta'
+        cards:
+          - type: thermostat
+            entity: climate.first_floor_corridor_and_toilet
+            name: 'Termostat'
+          - type: vertical-stack
+            cards:
+              - type: entities
+                state_color: true
+                entities:
+                  - binary_sensor.first_floor_connection_of_thermostat_corridor_and_toilet
+                  - entity: binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet
+                    name: 'Detekce otevřeného okna'
+      - type: vertical-stack
+        title: 'Koupelna'
+        cards:
+          - type: thermostat
+            entity: climate.first_floor_bathroom
+            name: 'Termostat'
+          - type: vertical-stack
+            cards:
+              - type: entities
+                state_color: true
+                entities:
+                  - binary_sensor.first_floor_connection_of_thermostat_bathroom
+                  - entity: binary_sensor.first_floor_detection_of_open_window_bathroom
+                    name: 'Detekce otevřeného okna'
+      - type: vertical-stack
+        title: 'Obývací pokoj a kuchyň'
+        cards:
+          - type: thermostat
+            entity: climate.first_floor_living_room_and_kitchen
+            name: 'Termostat'
+          - type: vertical-stack
+            cards:
+              - type: entities
+                state_color: true
+                entities:
+                  - binary_sensor.first_floor_connection_of_thermostat_living_room_and_kitchen
+                  - entity: binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen
+                    name: 'Detekce otevřeného okna'
+      - type: vertical-stack
+        title: 'Sklep'
+        cards:
+          - type: thermostat
+            entity: climate.first_floor_cellar
+            name: 'Termostat'
+          - type: vertical-stack
+            cards:
+              - type: entities
+                state_color: true
+                entities:
+                  - binary_sensor.first_floor_connection_of_thermostat_cellar
+                  - entity: binary_sensor.first_floor_detection_of_open_window_cellar
+                    name: 'Detekce otevřeného okna'
+      - type: vertical-stack
+        title: 'Garáž'
+        cards:
+          - type: thermostat
+            entity: climate.first_floor_garage
+            name: 'Termostat'
+          - type: vertical-stack
+            cards:
+              - type: entities
+                state_color: true
+                entities:
+                  - binary_sensor.first_floor_connection_of_thermostat_garage
+                  - entity: binary_sensor.first_floor_detection_of_open_window_garage
+                    name: 'Detekce otevřeného okna'

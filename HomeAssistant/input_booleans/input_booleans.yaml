@@ -1,0 +1,31 @@
+manual_summer_mode:
+  name: 'Letní mód'
+  icon: mdi:white-balance-sunny
+manual_winter_mode:
+  name: 'Zimní mód'
+  icon: mdi:snowflake
+control_mode_from_outdoor_temp_sensor:
+  name: 'Venkovní teplota'
+  icon: mdi:home-thermometer
+keep_same_states:
+  name: 'Nechá nastavené stavy'
+manual_control_devices:
+  name: 'Manuální ovládání zařízení'
+pumps_auto_start_cleaning:
+  name: 'Automatické zapnutí (čištění) čerpadel'
+pumps_auto_start_cleaning_indication:
+  name: 'Indikace automatické zapnutí (čístění) čerpadel'
+pump_fireplace_cellar_indication:
+  name: 'Indikace zapnutí čerpadla ve sklepě'
+pump_fireplace_first_floor_indication:
+  name: 'Indikace zapnutí čerpadla v přízemí'
+pump_fireplace_second_floor_indication:
+  name: 'Indikace zapnutí čerpadla v druhém patře'
+manual_control_corridor_thermostat:
+  name: 'Řízení teploty z chodbových termostatů'
+manual_control_room_thermostat:
+  name: 'Manuální řízení teploty z lokálních nástěnných snímčů teploty'
+control_according_to_plans:
+  name: 'Automatické řízení podle teplotních plánů'
+control_according_to_plans_with_temperature_prediction:
+  name: 'Automatické řízení podle teplotních plánů s teplotní predikcí'

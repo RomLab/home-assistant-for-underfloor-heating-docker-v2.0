@@ -1,0 +1,25 @@
+indication_states_of_fireplace_pumps:
+  alias: 'Indication states of fireplace pumps (on/off)'
+  description: 'Indication of turn on or turn off fireplace pumps'
+  sequence:
+  - service: input_boolean.turn_on
+    data_template:
+      entity_id: >
+        {%- if is_state('switch.pump_fireplace_first_floor', 'on') and is_state('switch.pump_fireplace_second_floor', 'on') and is_state('switch.pump_fireplace_cellar', 'on') -%}
+          input_boolean.pump_fireplace_first_floor_indication,input_boolean.pump_fireplace_second_floor_indication,input_boolean.pump_fireplace_cellar_indication
+        {%- elif is_state('switch.pump_fireplace_first_floor', 'on') and is_state('switch.pump_fireplace_second_floor', 'on') -%}
+          input_boolean.pump_fireplace_first_floor_indication,input_boolean.pump_fireplace_second_floor_indication
+        {%- elif is_state('switch.pump_fireplace_first_floor', 'on') and is_state('switch.pump_fireplace_cellar', 'on') -%}
+          input_boolean.pump_fireplace_first_floor_indication,input_boolean.pump_fireplace_cellar
+        {%- elif is_state('switch.pump_fireplace_second_floor', 'on') and is_state('switch.pump_fireplace_cellar', 'on') -%}
+          input_boolean.pump_fireplace_second_floor_indication,input_boolean.pump_fireplace_cellar
+        {%- elif is_state('switch.pump_fireplace_cellar', 'on') -%}
+          input_boolean.pump_fireplace_cellar_indication
+        {%- elif is_state('switch.pump_fireplace_first_floor', 'on') -%}
+          input_boolean.pump_fireplace_first_floor_indication
+        {%- elif is_state('switch.pump_fireplace_second_floor', 'on') -%}
+          input_boolean.pump_fireplace_second_floor_indication
+        {%- else -%}
+          input_boolean.keep_same_states
+        {%- endif -%}
+       

@@ -1,0 +1,65 @@
+# Corridor and toilet
+- platform: generic_thermostat
+  name: first_floor_corridor_and_toilet
+  heater: input_boolean.zone_first_floor_corridor_and_toilet
+  target_sensor: sensor.first_floor_corridor_and_toilet_temp
+  min_temp: 0
+  max_temp: 30
+  ac_mode: false
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  initial_hvac_mode: 'heat'
+  away_temp: 16
+  precision: 0.1
+# Bathroom
+- platform: generic_thermostat
+  name: first_floor_bathroom
+  heater: input_boolean.zone_first_floor_bathroom
+  target_sensor: sensor.first_floor_bathroom_temp
+  min_temp: 0
+  max_temp: 30
+  ac_mode: false
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  initial_hvac_mode: 'heat'
+  away_temp: 16
+  precision: 0.1
+# Living room and kitchen
+- platform: generic_thermostat
+  name: first_floor_living_room_and_kitchen
+  heater: input_boolean.zone_first_floor_living_room_and_kitchen
+  target_sensor: sensor.first_floor_living_room_and_kitchen_temp
+  min_temp: 0
+  max_temp: 30
+  ac_mode: false
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  initial_hvac_mode: 'heat'
+  away_temp: 16
+  precision: 0.1
+# Cellar
+- platform: generic_thermostat
+  name: first_floor_cellar
+  heater: input_boolean.zone_first_floor_cellar
+  target_sensor: sensor.first_floor_cellar_temp
+  min_temp: 0
+  max_temp: 30
+  ac_mode: false
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  initial_hvac_mode: 'heat'
+  away_temp: 16
+  precision: 0.1
+# Garage
+- platform: generic_thermostat
+  name: first_floor_garage
+  heater: input_boolean.zone_first_floor_garage
+  target_sensor: sensor.first_floor_garage_temp
+  min_temp: 0
+  max_temp: 30
+  ac_mode: false
+  cold_tolerance: 0.5
+  hot_tolerance: 0
+  initial_hvac_mode: 'heat'
+  away_temp: 16
+  precision: 0.1

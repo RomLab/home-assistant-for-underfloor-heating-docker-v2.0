@@ -1,0 +1,241 @@
+# Corridor and toilet
+first_floor_corridor_and_toilet_current_start:
+  name: 'Predikce aktuální slot start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_corridor_and_toilet_current_stop:
+  name: 'Predikce aktuální slot stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_corridor_and_toilet_next_start:
+  name: 'Predikce další slot start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_corridor_and_toilet_next_stop:
+  name: 'Predikce další slot stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_corridor_and_toilet_slope:
+  name: 'Predikce sklon'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+first_floor_corridor_and_toilet_intercept:
+  name: 'Predikce průsečík'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+# Bathroom
+first_floor_bathroom_current_start:
+  name: 'Predikce aktuální start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_bathroom_current_stop:
+  name: 'Predikce aktuální stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_bathroom_next_start:
+  name: 'Predikce další start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_bathroom_next_stop:
+  name: 'Predikce další stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_bathroom_slope:
+  name: 'Predikce sklon'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+first_floor_bathroom_intercept:
+  name: 'Predikce průsečík'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+# Living room and kitchen
+first_floor_living_room_and_kitchen_current_start:
+  name: 'Predikce aktuální start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_living_room_and_kitchen_current_stop:
+  name: 'Predikce aktuální stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_living_room_and_kitchen_next_start:
+  name: 'Predikce další start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_living_room_and_kitchen_next_stop:
+  name: 'Predikce další stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_living_room_and_kitchen_slope:
+  name: 'Predikce sklon'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+first_floor_living_room_and_kitchen_intercept:
+  name: 'Predikce průsečík'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+# Cellar
+first_floor_cellar_current_start:
+  name: 'Predikce aktuální start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_cellar_current_stop:
+  name: 'Predikce aktuální stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_cellar_next_start:
+  name: 'Predikce další start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_cellar_next_stop:
+  name: 'Predikce další stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_cellar_slope:
+  name: 'Predikce sklon'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+first_floor_cellar_intercept:
+  name: 'Predikce průsečík'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+# Garage
+first_floor_garage_current_start:
+  name: 'Predikce aktuální start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_garage_current_stop:
+  name: 'Predikce aktuální stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_garage_next_start:
+  name: 'Predikce další start'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_garage_next_stop:
+  name: 'Predikce další stop'
+  min: 0
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: 'min'
+first_floor_garage_slope:
+  name: 'Predikce sklon'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0
+  unit_of_measurement: '-'
+first_floor_garage_intercept:
+  name: 'Predikce průsečík'
+  min: -1000
+  max: 1000
+  mode: box
+  step: 1
+  initial: 0

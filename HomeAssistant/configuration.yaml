@@ -1,0 +1,385 @@
+homeassistant:
+  unit_system: metric
+  time_zone: Europe/Prague
+  customize: !include customize.yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/scheduler-card/scheduler-card.js
+      type: module
+    - url: /local/floorplan/floorplan.js?
+      type: module
+  dashboards:
+    lovelace-firstfloorthermostats: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: dashboards_first_floor_thermostats.yaml
+      title: 'Přízemí – termostaty'
+      icon: mdi:thermostat
+      show_in_sidebar: true
+      require_admin: false
+    lovelace-secondfloorthermostats: 
+      mode: yaml
+      filename: dashboards_second_floor_thermostats.yaml
+      title: 'Patro – termostaty'
+      icon: mdi:thermostat
+      show_in_sidebar: true
+      require_admin: false
+    lovelace-dashboardsfirstfloortemperatureplans:
+      mode: yaml
+      filename: dashboards_first_floor_temperature_plans.yaml
+      title: 'Přízemí – teplotní plány'
+      icon: mdi:calendar-range
+      show_in_sidebar: true
+      require_admin: false
+    lovelace-dashboardssecondfloortemperatureplans:
+      mode: yaml
+      filename: dashboards_second_floor_temperature_plans.yaml
+      title: 'Patro – teplotní plány'
+      icon: mdi:calendar-range
+      show_in_sidebar: true
+      require_admin: false
+    lovelace-dashboardsfirstfloorfloorplan:
+      mode: yaml
+      filename: dashboards_first_floor_floorplan.yaml
+      title: 'Přízemí – půdorys'
+      icon: mdi:floor-plan
+      show_in_sidebar: true
+      require_admin: false
+    lovelace-dashboardssecondfloorfloorplan:
+      mode: yaml
+      filename: dashboards_second_floor_floorplan.yaml
+      title: 'Patro – půdorys'
+      icon: mdi:floor-plan
+      show_in_sidebar: true
+      require_admin: false
+      
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+
+
+recorder:
+  #db_url: postgresql://@/homeassistant
+  purge_keep_days: 30
+  include:
+    domains:
+      - climate
+    entities:
+      # Heating water tank
+      - sensor.hot_water_tank_top
+      - sensor.hot_water_tank_middle
+      - sensor.hot_water_tank_bottom
+      # Outdoor
+      - sensor.outdoor
+      # Fireplaces
+      - sensor.fireplace_cellar
+      - sensor.fireplace_first_floor
+      - sensor.fireplace_second_floor
+      # MQTT
+        # First floor
+      - sensor.first_floor_corridor_and_toilet_temp
+      - sensor.first_floor_bathroom_temp
+      - sensor.first_floor_living_room_and_kitchen_temp
+      - sensor.first_floor_cellar_temp
+      - sensor.first_floor_garage_temp
+        # Second floor
+      - sensor.second_floor_bathroom_temp
+      - sensor.second_floor_kitchen_workroom_living_and_diving_room_temp
+      - sensor.second_floor_thomas_bedroom_temp
+      - sensor.second_floor_north_room_temp
+      - sensor.second_floor_middle_room_temp
+      - sensor.second_floor_corner_room_temp
+      - sensor.second_floor_corridor_and_toilet_temp
+      - sensor.second_floor_parents_bedroom_temp
+      # Ending of devices
+      - switch.gas_boiler
+      - switch.pump_fireplace_cellar
+      - switch.pump_fireplace_first_floor
+      - switch.pump_fireplace_second_floor
+      - switch.pump_first_floor
+      - switch.pump_second_floor
+      - switch.red_led
+      - switch.orange_led
+      - switch.blue_led
+      # Thermo actuators
+      - input_boolean.thermo_actuator_first_floor_corridor_and_toilet
+      - input_boolean.thermo_actuator_first_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_first_floor_bathroom
+      - input_boolean.thermo_actuator_first_floor_kitchen_door
+      - input_boolean.thermo_actuator_first_floor_living_room_1
+      - input_boolean.thermo_actuator_first_floor_living_room_2
+      - input_boolean.thermo_actuator_first_floor_living_room_3
+      - input_boolean.thermo_actuator_first_floor_kitchen_windows
+      - input_boolean.thermo_actuator_first_floor_cellar_ladder
+      - input_boolean.thermo_actuator_first_floor_garage_1
+      - input_boolean.thermo_actuator_first_floor_garage_2
+      - input_boolean.thermo_actuator_second_floor_bathroom
+      - input_boolean.thermo_actuator_second_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_second_floor_living_and_diving_room
+      - input_boolean.thermo_actuator_second_floor_workroom
+      - input_boolean.thermo_actuator_second_floor_kitchen
+      - input_boolean.thermo_actuator_second_floor_thomas_bedroom
+      - input_boolean.thermo_actuator_second_floor_north_room
+      - input_boolean.thermo_actuator_second_floor_middle_room
+      - input_boolean.thermo_actuator_second_floor_corner_room
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_window
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_door
+      - input_boolean.thermo_actuator_second_floor_corridor_and_toilet
+      # Heating circuit in first floor 
+      - input_boolean.zone_first_floor_corridor_and_toilet
+      - input_boolean.zone_first_floor_bathroom
+      - input_boolean.zone_first_floor_living_room_and_kitchen
+      - input_boolean.zone_first_floor_cellar
+      - input_boolean.zone_first_floor_garage
+      # Heating circuit in second floor
+      - input_boolean.zone_second_floor_bathroom
+      - input_boolean.zone_second_floor_kitchen_workroom_living_and_diving_room
+      - input_boolean.zone_second_floor_thomas_bedroom
+      - input_boolean.zone_second_floor_north_room
+      - input_boolean.zone_second_floor_middle_room
+      - input_boolean.zone_second_floor_corner_room
+      - input_boolean.zone_second_floor_corridor_and_toilet
+      - input_boolean.zone_second_floor_parents_bedroom
+      # Detection of open window in first floor
+      - binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.first_floor_detection_of_open_window_bathroom
+      - binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen
+      - binary_sensor.first_floor_detection_of_open_window_cellar
+      - binary_sensor.first_floor_detection_of_open_window_garage
+       # Detection of open window in second floor
+      - binary_sensor.second_floor_detection_of_open_window_bathroom
+      - binary_sensor.second_floor_detection_of_open_window_kitchen_workroom_living_and_diving_room
+      - binary_sensor.second_floor_detection_of_open_window_thomas_bedroom
+      - binary_sensor.second_floor_detection_of_open_window_north_room
+      - binary_sensor.second_floor_detection_of_open_window_middle_room
+      - binary_sensor.second_floor_detection_of_open_window_corner_room
+      - binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.second_floor_detection_of_open_window_parents_bedroom
+
+
+
+history:
+  include:
+    domains:
+      - climate
+    entities:
+      # Heating water tank
+      - sensor.hot_water_tank_top
+      - sensor.hot_water_tank_middle
+      - sensor.hot_water_tank_bottom
+      # Outdoor
+      - sensor.outdoor
+      # Fireplaces
+      - sensor.fireplace_cellar
+      - sensor.fireplace_first_floor
+      - sensor.fireplace_second_floor
+      # MQTT
+        # First floor
+      - sensor.first_floor_corridor_and_toilet_temp
+      - sensor.first_floor_bathroom_temp
+      - sensor.first_floor_living_room_and_kitchen_temp
+      - sensor.first_floor_cellar_temp
+      - sensor.first_floor_garage_temp
+        # Second floor
+      - sensor.second_floor_bathroom_temp
+      - sensor.second_floor_kitchen_workroom_living_and_diving_room_temp
+      - sensor.second_floor_thomas_bedroom_temp
+      - sensor.second_floor_north_room_temp
+      - sensor.second_floor_middle_room_temp
+      - sensor.second_floor_corner_room_temp
+      - sensor.second_floor_corridor_and_toilet_temp
+      - sensor.second_floor_parents_bedroom_temp
+      # Ending of devices
+      - switch.gas_boiler
+      - switch.pump_fireplace_cellar
+      - switch.pump_fireplace_first_floor
+      - switch.pump_fireplace_second_floor
+      - switch.pump_first_floor
+      - switch.pump_second_floor
+      - switch.red_led
+      - switch.orange_led
+      - switch.blue_led
+      # Thermo actuators
+      - input_boolean.thermo_actuator_first_floor_corridor_and_toilet
+      - input_boolean.thermo_actuator_first_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_first_floor_bathroom
+      - input_boolean.thermo_actuator_first_floor_kitchen_door
+      - input_boolean.thermo_actuator_first_floor_living_room_1
+      - input_boolean.thermo_actuator_first_floor_living_room_2
+      - input_boolean.thermo_actuator_first_floor_living_room_3
+      - input_boolean.thermo_actuator_first_floor_kitchen_windows
+      - input_boolean.thermo_actuator_first_floor_cellar_ladder
+      - input_boolean.thermo_actuator_first_floor_garage_1
+      - input_boolean.thermo_actuator_first_floor_garage_2
+      - input_boolean.thermo_actuator_second_floor_bathroom
+      - input_boolean.thermo_actuator_second_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_second_floor_living_and_diving_room
+      - input_boolean.thermo_actuator_second_floor_workroom
+      - input_boolean.thermo_actuator_second_floor_kitchen
+      - input_boolean.thermo_actuator_second_floor_thomas_bedroom
+      - input_boolean.thermo_actuator_second_floor_north_room
+      - input_boolean.thermo_actuator_second_floor_middle_room
+      - input_boolean.thermo_actuator_second_floor_corner_room
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_window
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_door
+      - input_boolean.thermo_actuator_second_floor_corridor_and_toilet
+      # Heating circuit in first floor
+      - input_boolean.zone_first_floor_corridor_and_toilet
+      - input_boolean.zone_first_floor_bathroom
+      - input_boolean.zone_first_floor_living_room_and_kitchen
+      - input_boolean.zone_first_floor_cellar
+      - input_boolean.zone_first_floor_garage
+      # Heating circuit in second floor
+      - input_boolean.zone_second_floor_bathroom
+      - input_boolean.zone_second_floor_kitchen_workroom_living_and_diving_room
+      - input_boolean.zone_second_floor_thomas_bedroom
+      - input_boolean.zone_second_floor_north_room
+      - input_boolean.zone_second_floor_middle_room
+      - input_boolean.zone_second_floor_corner_room
+      - input_boolean.zone_second_floor_corridor_and_toilet
+      - input_boolean.zone_second_floor_parents_bedroom
+      # Detection of open window in first floor
+      - binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.first_floor_detection_of_open_window_bathroom
+      - binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen
+      - binary_sensor.first_floor_detection_of_open_window_cellar
+      - binary_sensor.first_floor_detection_of_open_window_garage
+       # Detection of open window in second floor
+      - binary_sensor.second_floor_detection_of_open_window_bathroom
+      - binary_sensor.second_floor_detection_of_open_window_kitchen_workroom_living_and_diving_room
+      - binary_sensor.second_floor_detection_of_open_window_thomas_bedroom
+      - binary_sensor.second_floor_detection_of_open_window_north_room
+      - binary_sensor.second_floor_detection_of_open_window_middle_room
+      - binary_sensor.second_floor_detection_of_open_window_corner_room
+      - binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.second_floor_detection_of_open_window_parents_bedroom
+
+logbook:
+  include:
+    domains:
+      - climate
+    entities:
+      # Heating water tank
+      - sensor.hot_water_tank_top
+      - sensor.hot_water_tank_middle
+      - sensor.hot_water_tank_bottom
+      # Outdoor
+      - sensor.outdoor
+      # Fireplaces
+      - sensor.fireplace_cellar
+      - sensor.fireplace_first_floor
+      - sensor.fireplace_second_floor
+      # MQTT
+        # First floor
+      - sensor.first_floor_corridor_and_toilet_temp
+      - sensor.first_floor_bathroom_temp
+      - sensor.first_floor_living_room_and_kitchen_temp
+      - sensor.first_floor_cellar_temp
+      - sensor.first_floor_garage_temp
+        # Second floor
+      - sensor.second_floor_bathroom_temp
+      - sensor.second_floor_kitchen_workroom_living_and_diving_room_temp
+      - sensor.second_floor_thomas_bedroom_temp
+      - sensor.second_floor_north_room_temp
+      - sensor.second_floor_middle_room_temp
+      - sensor.second_floor_corner_room_temp
+      - sensor.second_floor_corridor_and_toilet_temp
+      - sensor.second_floor_parents_bedroom_temp
+      # Ending of devices
+      - switch.gas_boiler
+      - switch.pump_fireplace_cellar
+      - switch.pump_fireplace_first_floor
+      - switch.pump_fireplace_second_floor
+      - switch.pump_first_floor
+      - switch.pump_second_floor
+      - switch.red_led
+      - switch.orange_led
+      - switch.blue_led
+      # Thermo actuators
+      - input_boolean.thermo_actuator_first_floor_corridor_and_toilet
+      - input_boolean.thermo_actuator_first_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_first_floor_bathroom
+      - input_boolean.thermo_actuator_first_floor_kitchen_door
+      - input_boolean.thermo_actuator_first_floor_living_room_1
+      - input_boolean.thermo_actuator_first_floor_living_room_2
+      - input_boolean.thermo_actuator_first_floor_living_room_3
+      - input_boolean.thermo_actuator_first_floor_kitchen_windows
+      - input_boolean.thermo_actuator_first_floor_cellar_ladder
+      - input_boolean.thermo_actuator_first_floor_garage_1
+      - input_boolean.thermo_actuator_first_floor_garage_2
+      - input_boolean.thermo_actuator_second_floor_bathroom
+      - input_boolean.thermo_actuator_second_floor_bathroom_ladder
+      - input_boolean.thermo_actuator_second_floor_living_and_diving_room
+      - input_boolean.thermo_actuator_second_floor_workroom
+      - input_boolean.thermo_actuator_second_floor_kitchen
+      - input_boolean.thermo_actuator_second_floor_thomas_bedroom
+      - input_boolean.thermo_actuator_second_floor_north_room
+      - input_boolean.thermo_actuator_second_floor_middle_room
+      - input_boolean.thermo_actuator_second_floor_corner_room
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_window
+      - input_boolean.thermo_actuator_second_floor_parents_bedroom_door
+      - input_boolean.thermo_actuator_second_floor_corridor_and_toilet
+      # Heating circuit in first floor
+      - input_boolean.zone_first_floor_corridor_and_toilet
+      - input_boolean.zone_first_floor_bathroom
+      - input_boolean.zone_first_floor_living_room_and_kitchen
+      - input_boolean.zone_first_floor_cellar
+      - input_boolean.zone_first_floor_garage
+      # Heating circuit in second floor
+      - input_boolean.zone_second_floor_bathroom
+      - input_boolean.zone_second_floor_kitchen_workroom_living_and_diving_room
+      - input_boolean.zone_second_floor_thomas_bedroom
+      - input_boolean.zone_second_floor_north_room
+      - input_boolean.zone_second_floor_middle_room
+      - input_boolean.zone_second_floor_corner_room
+      - input_boolean.zone_second_floor_corridor_and_toilet
+      - input_boolean.zone_second_floor_parents_bedroom
+      # Detection of open window in first floor
+      - binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.first_floor_detection_of_open_window_bathroom
+      - binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen
+      - binary_sensor.first_floor_detection_of_open_window_cellar
+      - binary_sensor.first_floor_detection_of_open_window_garage
+       # Detection of open window in second floor
+      - binary_sensor.second_floor_detection_of_open_window_bathroom
+      - binary_sensor.second_floor_detection_of_open_window_kitchen_workroom_living_and_diving_room
+      - binary_sensor.second_floor_detection_of_open_window_thomas_bedroom
+      - binary_sensor.second_floor_detection_of_open_window_north_room
+      - binary_sensor.second_floor_detection_of_open_window_middle_room
+      - binary_sensor.second_floor_detection_of_open_window_corner_room
+      - binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet
+      - binary_sensor.second_floor_detection_of_open_window_parents_bedroom
+
+#mqtt:
+#  broker: localhost
+#  username: homeassistant
+#  password: VelmiSilneHesloProHomeassistant
+
+
+
+
+binary_sensor: !include_dir_merge_list binary_sensors/
+input_number: !include_dir_merge_named input_numbers/
+input_boolean: !include_dir_merge_named input_booleans/
+input_datetime: !include_dir_merge_named input_datetimes/
+input_select: !include_dir_merge_named input_selects/
+switch: !include_dir_merge_list control_gpio_devices/
+sensor: !include_dir_merge_list sensors/
+mqtt:
+  sensor: !include_dir_merge_list mqtt/
+climate: !include_dir_merge_list climates/
+
+automation: !include_dir_merge_list automation/
+script: !include_dir_merge_named scripts/
+group: !include_dir_merge_named groups/
+shell_command: !include shell_command.yaml
+

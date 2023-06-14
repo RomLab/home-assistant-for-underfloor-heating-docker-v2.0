@@ -1,0 +1,31 @@
+- alias: 'Send notification about flooding in the fireplace'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.blue_led
+    to: 'on'
+  action:
+    # Mobile app
+    - service: notify.notify
+      data:
+        message: 'Zatop v krbu!'
+        title: 'Studená otopná voda'
+    # All local thermostat
+    - service: mqtt.publish
+      data:
+        topic: 'home/user-message'
+        payload: 'Zatop v krbu!'
+        qos: 1
+- alias: 'Remove notification about flooding in the fireplace from all local thermostat'
+  initial_state: 'on'
+  trigger:
+    platform: state 
+    entity_id: switch.blue_led
+    to: 'off'
+  action:
+    # All local thermostat
+    - service: mqtt.publish
+      data:
+        topic: 'home/user-message'
+        payload: ' '
+        qos: 1

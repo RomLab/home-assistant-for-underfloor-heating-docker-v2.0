@@ -1,0 +1,12 @@
+shutdown_rpi:
+  alias: 'Vypnutí RPi'
+  description: 'Shutdown RPi'
+  icon: 'mdi:power'
+  sequence:
+    - service: shell_command.shutdown_rpi  
+restart_rpi:
+  alias: 'Restartování RPi'
+  description: 'Restart RPi'
+  icon: 'mdi:restart'
+  sequence:
+    - service: shell_command.restart_rpi

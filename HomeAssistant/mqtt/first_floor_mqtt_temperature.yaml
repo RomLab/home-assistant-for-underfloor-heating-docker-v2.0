@@ -1,0 +1,70 @@
+  # Corridor and toilet
+  - name: 'first_floor_corridor_and_toilet_temp'
+    state_topic: 'home/first-floor/corridor-and-toilet/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_corridor_and_toilet_required_temp_from_device'
+    state_topic: 'home/first-floor/corridor-and-toilet/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_corridor_and_toilet_actual_time'
+    state_topic: 'home/first-floor/corridor-and-toilet/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2
+  # Bathroom
+  - name: 'first_floor_bathroom_temp'
+    state_topic: 'home/first-floor/bathroom/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_bathroom_required_temp_from_device'
+    state_topic: 'home/first-floor/bathroom/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_bathroom_actual_time'
+    state_topic: 'home/first-floor/bathroom/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2
+  #Living room and kitchen
+  - name: 'first_floor_living_room_and_kitchen_temp'
+    state_topic: 'home/first-floor/living-room-and-kitchen/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_living_room_and_kitchen_required_temp_from_device'
+    state_topic: 'home/first-floor/living-room-and-kitchen/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_living_room_and_kitchen_actual_time'
+    state_topic: 'home/first-floor/living-room-and-kitchen/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2
+  #   Cellar
+  - name: 'first_floor_cellar_temp'
+    state_topic: 'home/first-floor/cellar/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_cellar_required_temp_from_device'
+    state_topic: 'home/first-floor/cellar/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_cellar_actual_time'
+    state_topic: 'home/first-floor/cellar/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2
+  #   Garage
+  - name: 'first_floor_garage_temp'
+    state_topic: 'home/first-floor/garage/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_garage_required_temp_from_device'
+    state_topic: 'home/first-floor/garage/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'first_floor_garage_actual_time'
+    state_topic: 'home/first-floor/garage/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2

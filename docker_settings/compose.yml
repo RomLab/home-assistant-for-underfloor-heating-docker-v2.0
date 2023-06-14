@@ -1,0 +1,46 @@
+version: '3'
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    volumes:
+      - /home/pi/mosquitto:/mosquitto
+      - /home/pi/mosquitto/data:/mosquitto/data
+      - /home/pi/mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001 
+
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    restart: unless-stopped
+    volumes:
+      - /home/pi/HomeAssistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - mosquitto
+    privileged: true
+    network_mode: host
+
+  appdaemon:
+    container_name: appdaemon
+    image: acockburn/appdaemon:latest
+    restart: unless-stopped
+    environment:
+      HA_URL: "http://192.168.11.196:8123"
+      TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhNTU0YmQyMmMyNjM0ODhkOTIxZjliMzY1Mzc3MGI4MCIsImlhdCI6MTY3NTYyNTc2NiwiZXhwIjoxOTkwOTg1NzY2fQ.fLj_NLHOCDcm6iMsDahXtHIO9S2OuzCrkr8AK8wQELE"
+      DASH_URL: "http://192.168.11.196:5050"
+    ports:
+      - "5050:5050"
+    volumes:
+      # Set which local directory will contain all your app daemon configuration
+      - /home/pi/AppDaemon:/conf
+#    devices:  
+#      - "/dev/spidev0.0:/dev/spidev0.1"  
+    depends_on:
+      - homeassistant
+    privileged: true
+
+

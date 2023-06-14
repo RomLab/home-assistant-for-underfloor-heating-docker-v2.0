@@ -1,0 +1,36 @@
+thermo_actuator_second_floor_bathroom:
+  name: 'Koupelna patro'
+  icon: mdi:valve
+thermo_actuator_second_floor_bathroom_ladder:
+  name: 'Koupelna patro – žebřík'
+  icon: mdi:valve
+thermo_actuator_second_floor_living_and_diving_room:
+  name: 'Obývák/jídelna'
+  icon: mdi:valve
+thermo_actuator_second_floor_workroom:
+  name: 'Pracovna'
+  icon: mdi:valve
+thermo_actuator_second_floor_kitchen:
+  name: 'Kuchyně'
+  icon: mdi:valve
+thermo_actuator_second_floor_thomas_bedroom:
+  name: 'Ložnice Tomáše'
+  icon: mdi:valve
+thermo_actuator_second_floor_north_room:
+  name: 'Severní pokoj'
+  icon: mdi:valve
+thermo_actuator_second_floor_middle_room:
+  name: 'Střední pokoj'
+  icon: mdi:valve
+thermo_actuator_second_floor_corner_room:
+  name: 'Rohový pokoj'
+  icon: mdi:valve
+thermo_actuator_second_floor_parents_bedroom_window:
+  name: 'Ložnice rodičů – okno'
+  icon: mdi:valve
+thermo_actuator_second_floor_parents_bedroom_door:
+  name: 'Ložnice rodičů – dveře'
+  icon: mdi:valve
+thermo_actuator_second_floor_corridor_and_toilet:
+  name: 'Chodba/toaleta'
+  icon: mdi:valve

@@ -1,0 +1,24 @@
+# Bathroom
+second_floor_mqtt_req_temp_record_from_bathroom:
+  name: 'Indikace přenosu (MQTT) požadované teploty z koupelny'
+# Kitchen, workroom, living and diving room
+second_floor_mqtt_req_temp_record_from_kitchen_workroom_living_and_diving_room:
+  name: 'Indikace přenosu (MQTT) požadované teploty z kuchyně, pracovny, obývacího/jidelního pokoje'
+# Thomas bedroom
+second_floor_mqtt_req_temp_record_from_thomas_bedroom:
+  name: 'Indikace přenosu (MQTT) požadované teploty z ložnice Tomáše'
+# North room
+second_floor_mqtt_req_temp_record_from_north_room:
+  name: 'Indikace přenosu (MQTT) požadované teploty ze severního pokoje'
+# Middle room
+second_floor_mqtt_req_temp_record_from_middle_room:
+  name: 'Indikace přenosu (MQTT) požadované teploty ze středního pokoje'
+# Corner room
+second_floor_mqtt_req_temp_record_from_corner_room:
+  name: 'Indikace přenosu (MQTT) požadované teploty z rohového pokoje'
+# Corridor and toilet
+second_floor_mqtt_req_temp_record_from_corridor_and_toilet:
+  name: 'Indikace přenosu (MQTT) požadované teploty z chodby a toalety'
+# Parents bedroom
+second_floor_mqtt_req_temp_record_from_parents_bedroom:
+  name: 'Indikace přenosu (MQTT) požadované teploty z ložnice rodičů'

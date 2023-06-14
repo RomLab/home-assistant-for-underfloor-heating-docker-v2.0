@@ -1,0 +1,18 @@
+pump_second_floor_zones:
+  alias: 'Zone control of a pump in a second floor for floor heating'
+  description: 'Zone control according to request from a zone control module on a second floor'
+  sequence:
+    - service_template: >
+        {%- if  
+          is_state('binary_sensor.second_floor_heating_state_bathroom', 'on') or        
+          is_state('binary_sensor.second_floor_heating_state_kitchen_workroom_living_and_diving_room', 'on') or      
+          is_state('binary_sensor.second_floor_heating_state_thomas_bedroom', 'on') or
+          is_state('binary_sensor.second_floor_heating_state_north_room', 'on') or
+          is_state('binary_sensor.second_floor_heating_state_middle_room', 'on') or        
+          is_state('binary_sensor.second_floor_heating_state_corner_room', 'on') or        
+          is_state('binary_sensor.second_floor_heating_state_parents_bedroom', 'on') or
+          is_state('binary_sensor.second_floor_heating_state_corridor_and_toilet', 'on') -%}
+           script.turn_on_pump_corridor_second_floor
+        {%- else -%}
+            script.turn_off_pump_corridor_second_floor
+        {%- endif -%}

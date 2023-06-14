@@ -1,0 +1,42 @@
+- alias: 'First floor – Sets required temperature for a livingroom from system'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: climate.first_floor_garage
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: >
+            {{ trigger.from_state and
+               trigger.to_state.attributes.temperature !=
+               trigger.from_state.attributes.temperature and is_state("input_boolean.first_floor_mqtt_req_temp_record_from_garage", "off") }}
+  action:
+    - service: mqtt.publish
+      data:
+        topic: 'home/first-floor/garage/required-temperature-from-system'
+        payload_template: "{{ state_attr('climate.first_floor_garage','temperature') | float }}"
+        qos: 1
+- alias: 'First floor – Sets required temperature for a garage from device'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.first_floor_garage_required_temp_from_device
+  condition:
+    condition: template
+    value_template: >
+        {{ trigger.from_state and
+           trigger.to_state !=
+           trigger.from_state }}
+  action:
+    # Disable sets required temp. from system
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.first_floor_mqtt_req_temp_record_from_garage
+    - service: climate.set_temperature
+      entity_id: climate.first_floor_garage
+      data_template:
+        temperature: '{{ states("sensor.first_floor_garage_required_temp_from_device") }}'
+    - delay: 
+        milliseconds: 5
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.first_floor_mqtt_req_temp_record_from_garage

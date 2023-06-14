@@ -1,0 +1,124 @@
+views:
+  - title: 'Patro – Teplotní plány'
+    path: patro-teplotni-plany
+    cards:
+      - type: 'custom:scheduler-card'
+        title: 'Koupelna'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_bathroom 
+        customize:
+          climate.second_floor_bathroom:
+            name: 'Koupelna'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Kuchyň, pracovna, obývací/jídelní pokoj'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_kitchen_workroom_living_and_diving_room 
+        customize:
+          climate.second_floor_kitchen_workroom_living_and_diving_room:
+            name: 'Kuchyň, pracovna, obývací/jidelní pokoj'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Tomáš ložnice'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_thomas_bedroom 
+        customize:
+          climate.second_floor_thomas_bedroom:
+            name: 'Tomáš ložnice'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Severní pokoj'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_north_room 
+        customize:
+          climate.second_floor_north_room:
+            name: 'Severní pokoj'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Střední pokoj'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_middle_room 
+        customize:
+          climate.second_floor_middle_room:
+            name: 'Střední pokoj'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Rohový pokoj'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_corner_room 
+        customize:
+          climate.second_floor_corner_room:
+            name: 'Rohový pokoj'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Chodba a toaleta'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_corridor_and_toilet 
+        customize:
+          climate.second_floor_corridor_and_toilet:
+            name: 'Chodba a toaleta'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Ložnice rodičů'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.second_floor_parents_bedroom 
+        customize:
+          climate.second_floor_parents_bedroom:
+            name: 'Ložnice rodičů'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']

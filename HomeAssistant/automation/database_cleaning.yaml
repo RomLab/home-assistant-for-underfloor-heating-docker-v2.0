@@ -1,0 +1,12 @@
+- alias: 'Database cleaning'
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '12:00:00'
+  condition:
+  - condition: time
+    weekday:
+      - mon
+  action:
+    service: script.turn_on
+    entity_id: script.database_cleaning

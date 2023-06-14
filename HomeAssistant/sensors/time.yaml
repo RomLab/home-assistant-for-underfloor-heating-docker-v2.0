@@ -1,0 +1,10 @@
+- platform: time_date
+  display_options:
+    - 'time'
+
+- platform: template
+  sensors:
+    current_minutes:
+      value_template: "{{ (now().hour * 60 + now().minute) | int }}"
+    current_weekday:
+      value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}"

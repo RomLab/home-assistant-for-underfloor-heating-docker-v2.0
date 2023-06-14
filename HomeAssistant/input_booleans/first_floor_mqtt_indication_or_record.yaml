@@ -1,0 +1,18 @@
+# Office
+first_floor_mqtt_req_temp_record_from_office:
+  name: 'Indikace přenosu (MQTT) požadované teploty z kanceláře'
+# Corridor and toilet
+first_floor_mqtt_req_temp_record_from_corridor_and_toilet:
+  name: 'Indikace přenosu (MQTT) požadované teploty z chodby a toalety'
+# Bathroom
+first_floor_mqtt_req_temp_record_from_bathroom:
+  name: 'Indikace přenosu (MQTT) požadované teploty z koupelny'
+# Living room and kitchen
+first_floor_mqtt_req_temp_record_from_living_room_and_kitchen:
+  name: 'Indikace přenosu (MQTT) požadované teploty z obývacího pokoje/kuchyň'
+# Cellar
+first_floor_mqtt_req_temp_record_from_cellar:
+  name: 'Indikace přenosu (MQTT) požadované teploty ze sklepa'
+# Garage
+first_floor_mqtt_req_temp_record_from_garage:
+  name: 'Indikace přenosu (MQTT) požadované teploty z garáže'

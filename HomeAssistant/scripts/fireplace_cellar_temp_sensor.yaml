@@ -1,0 +1,12 @@
+fireplace_cellar_temp_sensor:
+  alias: 'Control of a pump fireplace in cellar'
+  description: 'Control of a pump fireplace in a cellar according to a temp. from sensor and temp. limit from a user'
+  sequence:
+    - service_template: >
+        {%- set fireplace_cellar_temperature = states('sensor.fireplace_cellar') | int -%}
+        {%- set fireplace_cellar_min_temp_value = states('input_number.fireplace_cellar_min_temp_value') | int -%}
+        {%- if fireplace_cellar_temperature >= fireplace_cellar_min_temp_value -%}
+           script.turn_on_pump_fireplace_cellar
+        {%- else -%}
+            script.turn_off_pump_fireplace_cellar
+        {%- endif -%}

@@ -1,0 +1,154 @@
+views:   
+  - title: 'Přehled'
+    path: prehled
+    cards:
+      - type: vertical-stack
+        title: 'Teploty'
+        cards:
+          - type: history-graph
+            title: 'Porovnání teploty'
+            entities:
+              - entity: sensor.hot_water_tank_top
+              - entity: sensor.hot_water_tank_middle
+              - entity: sensor.hot_water_tank_bottom
+              - entity: sensor.fireplace_cellar
+              - entity: sensor.fireplace_first_floor
+              - entity: sensor.fireplace_second_floor
+              - entity: sensor.outdoor
+          - type: entities
+            title: 'Jednotlivé sensory'
+            show_header_toggle: false
+            entities:
+              - entity: sensor.hot_water_tank_top
+              - entity: sensor.hot_water_tank_middle
+              - entity: sensor.hot_water_tank_bottom
+              - entity: sensor.fireplace_cellar
+              - entity: sensor.fireplace_first_floor
+              - entity: sensor.fireplace_second_floor
+              - entity: sensor.outdoor   
+
+
+  - title: 'Nastavení'
+    path: nastaveni
+    cards:
+      - type: entities
+        title: 'Řízení teploty'
+        show_header_toggle: false
+        entities:
+          - input_boolean.manual_control_corridor_thermostat
+          - input_boolean.manual_control_room_thermostat
+          - input_boolean.control_according_to_plans
+          - input_boolean.control_according_to_plans_with_temperature_prediction
+      - type: horizontal-stack
+        title: 'Módy řízení'
+        cards:
+          - type: entity-button
+            entity: input_boolean.manual_summer_mode
+          - type: entity-button
+            entity: input_boolean.manual_winter_mode
+          - type: entity-button
+            entity: input_boolean.control_mode_from_outdoor_temp_sensor
+      - type: horizontal-stack
+        title: 'Spínání topné spirály'
+        cards:
+          - type: glance
+            title: 'Léto'
+            entities:
+              - input_number.gas_boiler_summer_temp_from
+              - input_number.gas_boiler_summer_temp_to
+          - type: glance
+            title: 'Zima'
+            entities:
+              - input_number.gas_boiler_winter_temp_from
+              - input_number.gas_boiler_winter_temp_to
+      - type: glance
+        title: 'Krby – spínání čerpadel'
+        entities:
+          - input_number.fireplace_cellar_min_temp_value
+          - input_number.fireplace_first_floor_min_temp_value
+          - input_number.fireplace_second_floor_min_temp_value
+      - type: glance
+        title: 'LED indikace – mezní parametry zásobníku teplé vody'
+        entities:
+          - input_number.led_indication_min_value_temp_top_sensor
+          - input_number.led_indication_max_value_temp_middle_sensor
+          - input_number.led_indication_max_value_temp_bottom_sensor
+      - type: glance
+        title: 'Ostatní nastavení'
+        entities:
+          - input_number.gas_boiler_temp_hysteresis
+          - input_number.min_temp_summer_mode     
+  - title: 'Zařízení'
+    path: zarizeni
+    cards:
+      - type: entities
+        title: 'Koncová zařízení'
+        show_header_toggle: false
+        entities:
+          - input_boolean.manual_control_devices
+          - entity: switch.gas_boiler
+          - entity: switch.pump_fireplace_cellar
+          - entity: switch.pump_fireplace_first_floor
+          - entity: switch.pump_fireplace_second_floor
+          - entity: switch.pump_first_floor
+          - entity: switch.pump_second_floor
+          - sensor.blue_led
+          - sensor.orange_led
+          - sensor.red_led
+      - type: glance
+        title: 'Termostaty chodby – požadavek topení'
+        entities:
+          - sensor.thermostat_first_floor_display
+          - sensor.thermostat_second_floor_display
+      - type: entities
+        title: 'Přízemí – otopné okruhy (ventily)'
+        show_header_toggle: false
+        entities:
+          - sensor.thermo_actuator_first_floor_corridor_and_toilet
+          - sensor.thermo_actuator_first_floor_bathroom_ladder
+          - sensor.thermo_actuator_first_floor_bathroom
+          - sensor.thermo_actuator_first_floor_kitchen_door
+          - sensor.thermo_actuator_first_floor_living_room_1
+          - sensor.thermo_actuator_first_floor_living_room_2
+          - sensor.thermo_actuator_first_floor_living_room_3
+          - sensor.thermo_actuator_first_floor_kitchen_windows
+          - sensor.thermo_actuator_first_floor_cellar_ladder
+          - sensor.thermo_actuator_first_floor_garage_1
+          - sensor.thermo_actuator_first_floor_garage_2
+      - type: entities
+        title: 'Patro – otopné okruhy (ventily)'
+        show_header_toggle: false
+        entities:
+          - sensor.thermo_actuator_second_floor_bathroom
+          - sensor.thermo_actuator_second_floor_bathroom_ladder
+          - sensor.thermo_actuator_second_floor_living_and_diving_room
+          - sensor.thermo_actuator_second_floor_workroom
+          - sensor.thermo_actuator_second_floor_kitchen
+          - sensor.thermo_actuator_second_floor_corridor_and_toilet
+          - sensor.thermo_actuator_second_floor_north_room
+          - sensor.thermo_actuator_second_floor_parents_bedroom_window
+          - sensor.thermo_actuator_second_floor_parents_bedroom_door
+          - sensor.thermo_actuator_second_floor_middle_room
+          - sensor.thermo_actuator_second_floor_corner_room
+          - sensor.thermo_actuator_second_floor_thomas_bedroom 
+  - title: 'Ostatní'
+    path: ostatni
+    cards:
+    - type: entities
+      title: 'Ovládání čerpadel – vodní kámen'
+      entities: 
+        - input_boolean.pumps_auto_start_cleaning
+        - input_select.pumps_start_cleaning
+        - input_datetime.pumps_start_cleaning
+        - input_number.pumps_lenght_of_run
+  - title: 'Ovládání RPi'
+    path: ovladani-rpi
+    cards:
+    - type: entities
+      title: 'Ovládání RPi'
+      show_header_toggle: false
+      entities:
+        - script.shutdown_rpi
+        - script.restart_rpi
+
+

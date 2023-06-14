@@ -1,0 +1,15 @@
+pump_first_floor_zones:
+  alias: 'Zone control of a pump in a first floor for floor heating'
+  description: 'Zone control according to request from a zone control module on a first floor'
+  sequence:
+    - service_template: >-
+        {%- 
+        if is_state('binary_sensor.first_floor_heating_state_corridor_and_toilet', 'on') or 
+        is_state('binary_sensor.first_floor_heating_state_bathroom', 'on') or 
+        is_state('binary_sensor.first_floor_heating_state_living_room_and_kitchen', 'on') or 
+        is_state('binary_sensor.first_floor_heating_state_cellar', 'on') or 
+        is_state('binary_sensor.first_floor_heating_state_garage', 'on') -%}
+          script.turn_on_pump_corridor_first_floor
+        {%- else -%}
+          script.turn_off_pump_corridor_first_floor
+        {%- endif -%}

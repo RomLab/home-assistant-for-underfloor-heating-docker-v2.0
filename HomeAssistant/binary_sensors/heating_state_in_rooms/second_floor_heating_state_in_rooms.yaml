@@ -1,0 +1,72 @@
+# Sensors for only read heating states in rooms for second floor. Primary for floor plan.
+- platform: template
+  sensors:
+    second_floor_heating_state_bathroom:
+      friendly_name: 'Stav vytápění – koupelna (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_bathroom', 'on') or
+               is_state('input_boolean.thermo_actuator_second_floor_bathroom_ladder', 'on') -%} 
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+    second_floor_heating_state_kitchen_workroom_living_and_diving_room:
+      friendly_name: 'Stav vytápění – kuchyň, pracovna, obývací a jídelní pokoj (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_living_and_diving_room', 'on') or
+               is_state('input_boolean.thermo_actuator_second_floor_workroom', 'on') or
+               is_state('input_boolean.thermo_actuator_second_floor_kitchen', 'on') -%} 
+          on
+        {%- else -%}
+          off
+        {%- endif -%}    
+    second_floor_heating_state_thomas_bedroom:
+      friendly_name: 'Stav vytápění – Tomáš ložnice (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_thomas_bedroom', 'on') -%} 
+          on
+        {%- else -%}
+          off
+        {%- endif -%}      
+    second_floor_heating_state_north_room:
+      friendly_name: 'Stav vytápění – severní pokoj (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_north_room', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}      
+    second_floor_heating_state_middle_room:
+      friendly_name: 'Stav vytápění – střední pokoj (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_middle_room', 'on') -%} 
+          on
+        {%- else -%}
+          off
+        {%- endif -%}    
+    second_floor_heating_state_corner_room:
+      friendly_name: 'Stav vytápění – rohový pokoj (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_corner_room', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}      
+    second_floor_heating_state_parents_bedroom:
+      friendly_name: 'Stav vytápění – ložnice rodičů (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_parents_bedroom_window', 'on') or
+               is_state('input_boolean.thermo_actuator_second_floor_parents_bedroom_door', 'on') -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}    
+    second_floor_heating_state_corridor_and_toilet:
+      friendly_name: 'Stav vytápění – chodba/toaleta (druhé patro)'
+      value_template: >-
+        {%- if is_state('input_boolean.thermo_actuator_second_floor_corridor_and_toilet', 'on') -%} 
+          on
+        {%- else -%}
+          off
+        {%- endif -%}   
+      

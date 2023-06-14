@@ -1,0 +1,3 @@
+smbus
+RPi.GPIO
+spidev==3.5

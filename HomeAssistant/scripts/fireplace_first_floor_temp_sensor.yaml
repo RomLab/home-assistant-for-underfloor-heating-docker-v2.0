@@ -1,0 +1,12 @@
+fireplace_first_floor_temp_sensor:
+  alias: 'Control of a pump fireplace in first floor'
+  description: 'Control of a pump fireplace in a first floor according to a temp. from sensor and temp. limit from a user'
+  sequence:
+    - service_template: >
+        {%- set fireplace_first_floor_temperature = states('sensor.fireplace_first_floor') | int -%}
+        {%- set fireplace_first_floor_min_temp_value = states('input_number.fireplace_first_floor_min_temp_value') | int -%}
+        {%- if fireplace_first_floor_temperature >= fireplace_first_floor_min_temp_value -%}
+           script.turn_on_pump_fireplace_first_floor
+        {%- else -%}
+            script.turn_off_pump_fireplace_first_floor
+        {%- endif -%}

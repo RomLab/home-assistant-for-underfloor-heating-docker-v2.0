@@ -1,0 +1,25 @@
+appdaemon:
+  time_zone: Europe/Prague
+  latitude: 32.87336
+  longitude: 117.22743
+  elevation: 430
+  plugins:
+    HASS:
+      type: hass
+      ha_url: http://192.168.11.196:8123
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhNTU0YmQyMmMyNjM0ODhkOTIxZjliMzY1Mzc3MGI4MCIsImlhdCI6MTY3NTYyNTc2NiwiZXhwIjoxOTkwOTg1NzY2fQ.fLj_NLHOCDcm6iMsDahXtHIO9S2OuzCrkr8AK8wQELE
+http:
+  url: http://192.168.11.196:5050
+admin:
+api:
+hadashboard:
+
+logs:
+  main_log: 
+    filename: /conf/logs/appdaemon.log
+  access_log:
+    filename: /conf/logs/access.log
+  error_log:
+    filename: /conf/logs/error.log
+  diag_log:
+    filename: /conf/logs/diag.log

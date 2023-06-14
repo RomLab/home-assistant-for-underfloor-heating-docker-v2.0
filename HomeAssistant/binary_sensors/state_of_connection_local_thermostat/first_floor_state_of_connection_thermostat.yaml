@@ -1,0 +1,23 @@
+# State of connection local thermostat for a first floor
+- platform: template
+  sensors:
+    first_floor_state_of_connection_corridor_and_toilet:
+      friendly_name: 'Stav připojení'
+      value_template: "{{ states('input_boolean.first_floor_state_of_connection_corridor_and_toilet') }}"
+      icon_template: mdi:connection
+    first_floor_state_of_connection_bathroom:
+      friendly_name: 'Stav připojení'
+      value_template: "{{ states('input_boolean.first_floor_state_of_connection_bathroom') }}"
+      icon_template: mdi:connection
+    first_floor_state_of_connection_living_room_and_kitchen:
+      friendly_name: 'Stav připojení'
+      value_template: "{{ states('input_boolean.first_floor_state_of_connection_living_room_and_kitchen') }}" 
+      icon_template: mdi:connection
+    first_floor_state_of_connection_cellar:
+      friendly_name: 'Stav připojení'
+      value_template: "{{ states('input_boolean.first_floor_state_of_connection_cellar') }}" 
+      icon_template: mdi:connection
+    first_floor_state_of_connection_garage:
+      friendly_name: 'Stav připojení'
+      value_template: "{{ states('input_boolean.first_floor_state_of_connection_garage') }}" 
+      icon_template: mdi:connection

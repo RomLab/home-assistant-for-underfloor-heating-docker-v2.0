@@ -1,0 +1,39 @@
+- platform: template
+  sensors:
+    second_floor_middle_room_forecast:
+      value_template: >
+        {%- set roomTemperature = states('sensor.second_floor_middle_room_temp') | float(0) -%}
+        {%- set requiredTemperature = state_attr('climate.second_floor_middle_room', 'temperature') | float(0) -%}
+        {%- set nextStartTimeSlotMinutes = states('input_number.second_floor_middle_room_next_start') | int(0) -%}
+        {%- set currentStartTimeSlotMinutes = states('input_number.second_floor_middle_room_current_start') | int(0) -%}
+        {%- set currentMinutes = (now().hour * 60 + now().minute) | int -%}
+        {%- set hourForForecast = (nextStartTimeSlotMinutes/60) | int -%}
+        {%- set forecastTemperature = state_attr('weather.home_hourly', 'forecast')[hourForForecast].temperature | float(0) -%}
+        {%- set outdoorTemperature = states('sensor.outdoor') | float(0) -%}
+        {%- set slope = states('input_number.second_floor_middle_room_slope') | float(0) -%}
+        {%- set intercept = states('input_number.second_floor_middle_room_intercept') | float(0) -%}
+        {%- set nextLinearApproximation = ((roomTemperature - forecastTemperature) * slope + intercept) | int(0) -%}
+        {%- set currentLinearApproximation = ((roomTemperature - outdoorTemperature) * slope + intercept) | int(0) -%}
+        {%- set diffTime = (nextStartTimeSlotMinutes - currentMinutes) | int(0) -%} 
+        {%- set isRequiredHeating = state_attr('climate.second_floor_middle_room', 'current_temperature') | float(0) < state_attr('climate.second_floor_middle_room', 'temperature') | float(0) - 0.5 | float(0) -%}
+        {%- set stateOfControlAccordingToPlansWithTempPrediction = is_state('input_boolean.control_according_to_plans_with_temperature_prediction','on') -%}
+        {%- if stateOfControlAccordingToPlansWithTempPrediction and isRequiredHeating -%} 
+          {%- if nextLinearApproximation > 0 -%}  
+            {%- if diffTime >= 0 and diffTime <= nextLinearApproximation -%}
+              heating
+            {%- else -%}
+              off
+            {%- endif -%}
+          {%- elif currentLinearApproximation < 0 -%}
+            {%- if currentMinutes >= currentStartTimeSlotMinutes and currentMinutes <= currentStartTimeSlotMinutes + (-1 * currentLinearApproximation) -%}
+              not_heating
+            {%- else -%}
+              off
+            {%- endif -%}
+          {%- else -%}
+              off
+          {%- endif -%}
+        {%- else -%}
+          off
+        {%- endif -%}
+

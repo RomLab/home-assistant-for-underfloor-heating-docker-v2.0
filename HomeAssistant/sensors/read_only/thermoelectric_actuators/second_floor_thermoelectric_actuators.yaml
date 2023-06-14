@@ -1,0 +1,51 @@
+# Sensors for only read thermoelectric actuators for second floor
+- platform: template
+  sensors:
+    thermo_actuator_second_floor_bathroom:
+      friendly_name: 'Koupelna patro'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_bathroom') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_bathroom_ladder:
+      friendly_name: 'Koupelna patro – žebřík'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_bathroom_ladder') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_living_and_diving_room:
+      friendly_name: 'Obývák/jídelna'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_living_and_diving_room') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_workroom:
+      friendly_name: 'Pracovna'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_workroom') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_kitchen:
+      friendly_name: 'Kuchyně'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_kitchen') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_corridor_and_toilet:
+      friendly_name: 'Chodba/toaleta'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_corridor_and_toilet') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_north_room:
+      friendly_name: 'Severní pokoj'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_north_room') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_corner_room:
+      friendly_name: 'Rohový pokoj'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_corner_room') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_middle_room:
+      friendly_name: 'Střední pokoj'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_middle_room') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_parents_bedroom_window:
+      friendly_name: 'Ložnice rodičů – okno'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_parents_bedroom_window') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_parents_bedroom_door:
+      friendly_name: 'Ložnice rodičů – dveře'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_parents_bedroom_door') }}"
+      icon_template: mdi:valve
+    thermo_actuator_second_floor_thomas_bedroom:
+      friendly_name: 'Tomáše ložnice'
+      value_template: "{{ states('input_boolean.thermo_actuator_second_floor_thomas_bedroom') }}"
+      icon_template: mdi:valve

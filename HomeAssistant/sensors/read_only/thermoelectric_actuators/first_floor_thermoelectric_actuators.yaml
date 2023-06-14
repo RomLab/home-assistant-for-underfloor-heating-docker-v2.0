@@ -1,0 +1,47 @@
+# Sensors for only read thermoelectric actuators for first floor
+- platform: template
+  sensors:
+    thermo_actuator_first_floor_corridor_and_toilet:
+      friendly_name: 'Chodba/toaleta'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_corridor_and_toilet') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_bathroom_ladder:
+      friendly_name: 'Koupelna přízemí – žebřík'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_bathroom_ladder') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_bathroom:
+      friendly_name: 'Koupelna přízemí'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_bathroom') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_kitchen_door:
+      friendly_name: 'Kuchyně – dveře'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_kitchen_door') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_living_room_1:
+      friendly_name: 'Obývací pokoj – okruh 1'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_living_room_1') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_living_room_2:
+      friendly_name: 'Obývací pokoj – okruh 2'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_living_room_2') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_living_room_3:
+      friendly_name: 'Obývací pokoj – okruh 3'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_living_room_3') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_kitchen_windows:
+      friendly_name: 'Kuchyně – okna'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_kitchen_windows') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_cellar_ladder:
+      friendly_name: 'Sklep – žebřík'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_cellar_ladder') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_garage_1:
+      friendly_name: 'Garáž – okruh 1'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_garage_1') }}"
+      icon_template: mdi:valve
+    thermo_actuator_first_floor_garage_2:
+      friendly_name: 'Garáž – okruh 2'
+      value_template: "{{ states('input_boolean.thermo_actuator_first_floor_garage_2') }}"
+      icon_template: mdi:valve

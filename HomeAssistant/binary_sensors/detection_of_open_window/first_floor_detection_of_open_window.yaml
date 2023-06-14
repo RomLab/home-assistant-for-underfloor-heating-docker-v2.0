@@ -1,0 +1,38 @@
+# Detection of state open window for first floor
+- platform: trend
+  sensors:
+    first_floor_detection_of_open_window_corridor_and_toilet:
+      friendly_name: 'Detekce otevřeného okna – chodba a toaleta (první patro)'
+      entity_id: sensor.first_floor_corridor_and_toilet_temp
+      sample_duration: 7200
+      min_gradient: -0.001
+      max_samples: 240
+      device_class: window
+    first_floor_detection_of_open_window_bathroom:
+      friendly_name: 'Detekce otevřeného okna – koupelna'
+      entity_id: sensor.first_floor_bathroom_temp
+      sample_duration: 7200
+      min_gradient: -0.001
+      max_samples: 240
+      device_class: window
+    first_floor_detection_of_open_window_living_room_and_kitchen:
+      friendly_name: 'Detekce otevřeného okna – obývací pokoj a kuchyň (první patro)'
+      entity_id: sensor.first_floor_living_room_and_kitchen_temp
+      sample_duration: 7200
+      min_gradient: -0.001
+      max_samples: 240
+      device_class: window
+    first_floor_detection_of_open_window_cellar:
+      friendly_name: 'Detekce otevřeného okna – sklep (první patro)'
+      entity_id: sensor.first_floor_cellar_temp
+      sample_duration: 7200
+      min_gradient: -0.001
+      max_samples: 240
+      device_class: window
+    first_floor_detection_of_open_window_garage:
+      friendly_name: 'Detekce otevřeného okna – garáž (první patro)'
+      entity_id: sensor.first_floor_garage_temp
+      sample_duration: 7200
+      min_gradient: -0.001
+      max_samples: 240
+      device_class: window

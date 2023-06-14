@@ -1,0 +1,112 @@
+# Bathroom
+  - name: 'second_floor_bathroom_temp'
+    state_topic: 'home/second-floor/bathroom/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_bathroom_required_temp_from_device'
+    state_topic: 'home/second-floor/bathroom/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_bathroom_actual_time'
+    state_topic: 'home/second-floor/bathroom/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # Kitchen, workroom, living and diving room
+  - name: 'second_floor_kitchen_workroom_living_and_diving_room_temp'
+    state_topic: 'home/second-floor/kitchen-workroom-living-and-diving-room/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_kitchen_workroom_living_and_diving_room_required_temp_from_device'
+    state_topic: 'home/second-floor/kitchen-workroom-living-and-diving-room/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_kitchen_workroom_living_and_diving_room_actual_time'
+    state_topic: 'home/second-floor/kitchen-workroom-living-and-diving-room/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # Thomas bedroom
+  - name: 'second_floor_thomas_bedroom_temp'
+    state_topic: 'home/second-floor/thomas-bedroom/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_thomas_bedroom_required_temp_from_device'
+    state_topic: 'home/second-floor/thomas-bedroom/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_thomas_bedroom_actual_time'
+    state_topic: 'home/second-floor/thomas-bedroom/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # North room
+  - name: 'second_floor_north_room_temp'
+    state_topic: 'home/second-floor/north-room/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_north_room_required_temp_from_device'
+    state_topic: 'home/second-floor/north-room/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_north_room_actual_time'
+    state_topic: 'home/second-floor/north-room/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # Middle room
+  - name: 'second_floor_middle_room_temp'
+    state_topic: 'home/second-floor/middle-room/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'second_floor_middle_room_required_temp_from_device'
+    state_topic: 'home/second-floor/middle-room/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 2
+  - name: 'second_floor_middle_room_actual_time'
+    state_topic: 'home/second-floor/middle-room/actual-time'
+    unit_of_measurement: '°C'
+    qos: 2
+  # Corner room
+  - name: 'second_floor_corner_room_temp'
+    state_topic: 'home/second-floor/corner-room/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_corner_room_required_temp_from_device'
+    state_topic: 'home/second-floor/corner-room/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_corner_room_actual_time'
+    state_topic: 'home/second-floor/corner-room/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # Corridor and toilet
+  - name: 'second_floor_corridor_and_toilet_temp'
+    state_topic: 'home/second-floor/corridor-and-toilet/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_corridor_and_toilet_required_temp_from_device'
+    state_topic: 'home/second-floor/corridor-and-toilet/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_corridor_and_toilet_actual_time'
+    state_topic: 'home/second-floor/corridor-and-toilet/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1
+  # Parents bedroom
+  - name: 'second_floor_parents_bedroom_temp'
+    state_topic: 'home/second-floor/parents-bedroom/temperature'
+    value_template: '{{ value | round(2) }}'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_parents_bedroom_required_temp_from_device'
+    state_topic: 'home/second-floor/parents-bedroom/required-temperature-from-device'
+    unit_of_measurement: '°C'
+    qos: 1
+  - name: 'second_floor_parents_bedroom_actual_time'
+    state_topic: 'home/second-floor/parents-bedroom/actual-time'
+    unit_of_measurement: '°C'
+    qos: 1

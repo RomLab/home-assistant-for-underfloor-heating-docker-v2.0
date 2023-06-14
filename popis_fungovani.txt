@@ -1,0 +1,55 @@
+Nezávislé na výběru teplotního režimu
+
+Topná spirála
+
+- Pro letní mód
+
+- Když je teplota horního čidla < min. horní čidlo - hystereze
+-- Zapni topnou spirálu
+- Jinak když je teplota středního čidla >= max. střední čidlo
+-- Vypni topnou spirálu
+- Jinak
+-- Drž nastavený stav spirály
+
+- Pro zimní mód je to stejné jako u letního, jen bere jiné meze
+
+
+Spínání čerpadel u krbů
+
+- Když je teplota na daném krbu >= min. hodnota pro sepnutí čerpadla
+-- Zapni čerpadlo
+- Jinak
+-- Vypni čerpadlo
+
+
+LED indikace
+- Když je hodnota spodního čidla >= nastavená max. hodnota spodního čidla
+-- Zapni červenou LED
+- Jinak
+-- Vypni červenou LED
+
+- Když je hodnota střeního čidla >= nastavená max. hodnota střeního čidla  
+-- Zapni oranžovou LED
+- Jinak
+-- Vypni oranžovu LED
+
+
+- Když je hodnota vrchního čidla < nastavená min. hodnota vrchního čidla
+-- Zapni modrou LED
+- Jinak
+-- Vypni modrou LED
+
+
+Zapnutí ventilu
+Pokud je splněna alespoň jedna podmínka
+- Když je zapnuto řízení z chodbových termostatů a je zapnutý lokální termostat a (je zapnutý zimní mód nebo mód z venkovního čidla na zimu)
+- Když je zapnuto řízení podle nástěného snímače a ventil pro danou místnost je zapnutý a daný nástěnný snímač je připojený do sítě a není detekce otevřeného okna
+- Když je zapnuto řízení podle teplotního plánu a ventil pro danou místnost je zapnutý a daný nástěnný snímač je připojený do sítě a není detekce otevřeného okna
+
+
+Vypnutí ventilu
+Pokud je splněna alespoň jedna podmínka
+- Když je vypnuto řízení z chodbových termostatů a je vypnuto řízení podle daného nástěnného snímače a je vypnuto řízení podle teplotních plánů
+- Když je zapnuto řízení z chodbových termostatů a je vypnutý chodbový termostat prodané patro a (zimní mód je zapnutý nebo mód z venkovního čidla na zimu)
+- Když je zapnuto řízení podle nástěného snímače a (ventil pro danou místnost je vypnutý nebo daný nástěnný snímač není připojený do sítě nebo je detekce otevřeného okna)
+- Když je zapnuto řízení podle teplotního plánu a (ventil pro danou místnost je vypnutý nebo daný nástěnný snímač není připojený do sítě nebo je detekce otevřeného okna)

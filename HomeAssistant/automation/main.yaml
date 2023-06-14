@@ -1,0 +1,20 @@
+# Refresh every 5 second, checks changes
+- alias: 'Main loop all script'
+  initial_state: 'on'
+  trigger:
+    platform: time_pattern
+    seconds: '/5'
+  action:
+    - service: script.turn_on
+      entity_id: 
+        - script.set_actuators_first_floor
+        - script.set_actuators_second_floor
+        - script.hot_water_tank_top_sensor_gas_boiler  
+        - script.fireplace_cellar_temp_sensor
+        - script.fireplace_first_floor_temp_sensor 
+        - script.fireplace_second_floor_temp_sensor 
+        - script.hot_water_tank_top_sensor_led_indication 
+        - script.hot_water_tank_middle_sensor_led_indication
+        - script.hot_water_tank_bottom_sensor_led_indication
+
+        

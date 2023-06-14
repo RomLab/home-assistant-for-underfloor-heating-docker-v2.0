@@ -1,0 +1,27 @@
+i2c_lcd:
+  module: i2c_lcd
+  class: I2CLCD
+temp_max31850k:
+  module: temp_max31850k
+  class: TEMPMAX31850K
+temp_18b20:
+  module: temp_18b20
+  class: TEMP18B20
+read_thermostat:
+  module: read_thermostat
+  class: READTHERMOSTAT
+thermoelectric_actuators_first_floor:
+  module: thermoelectric_actuators_first_floor
+  class: ThermoelectricActuatorsFirstFloor
+thermoelectric_actuators_second_floor:
+  module: thermoelectric_actuators_second_floor
+  class: ThermoelectricActuatorsSecondFloor
+#database:
+#  module: database
+#  class: DATABASE
+#timeslot:
+#  module: timeslot
+#  class: TIMESLOT
+#restart_power_supply_1wire_bus:
+#  module: restart_power_supply_1wire_bus
+#  class: RESTARTPOWERSUPPLY1WIREBUS

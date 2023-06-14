@@ -1,0 +1,20 @@
+turn_off_pump_fireplace_cellar:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - condition: state
+      entity_id: input_boolean.pumps_auto_start_cleaning_indication
+      state: 'off'
+    - service: switch.turn_off
+      data:
+        entity_id: switch.pump_fireplace_cellar
+
+turn_on_pump_fireplace_cellar:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - service: switch.turn_on
+      data:
+        entity_id: switch.pump_fireplace_cellar

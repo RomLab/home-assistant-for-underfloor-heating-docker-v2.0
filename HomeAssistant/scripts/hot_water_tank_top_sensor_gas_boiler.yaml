@@ -1,0 +1,31 @@
+hot_water_tank_top_sensor_gas_boiler:
+  alias: 'Control of gas boiler'
+  description: 'Control of a gas boiler from the top temp. sensor in a hot water tank, control according to a winter/summer mode and temperature limits from an user'
+  sequence: 
+    - service_template: >
+        {%- set hot_water_tank_top_sensor = states('sensor.hot_water_tank_top') | int(1000) -%}
+        {%- set hot_water_tank_middle_sensor = states('sensor.hot_water_tank_middle') | int(1000) -%}
+        {%- set gas_boiler_temp_hysteresis = states('sensor.gas_boiler_temp_hysteresis') | int(0) -%}
+        {%- set gas_boiler_summer_temp_from = states('input_number.gas_boiler_summer_temp_from') | int -%}
+        {%- set gas_boiler_summer_temp_to = states('input_number.gas_boiler_summer_temp_to') | int -%}
+        {%- set gas_boiler_winter_temp_from = states('input_number.gas_boiler_winter_temp_from') | int -%}
+        {%- set gas_boiler_winter_temp_to = states('input_number.gas_boiler_winter_temp_to') | int %}
+        {%- if is_state('input_boolean.manual_summer_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'summer') -%}
+            {%- if hot_water_tank_top_sensor < (gas_boiler_summer_temp_from - gas_boiler_temp_hysteresis) -%}
+              script.turn_on_gas_boiler
+            {%- elif hot_water_tank_middle_sensor >= gas_boiler_summer_temp_to -%}
+              script.turn_off_gas_boiler
+            {%- else -%}
+              script.keep_same_states
+            {%- endif -%}
+        {%- elif is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter') -%}
+            {%- if hot_water_tank_top_sensor < (gas_boiler_winter_temp_from - gas_boiler_temp_hysteresis) -%}
+              script.turn_on_gas_boiler
+            {%- elif hot_water_tank_middle_sensor >= gas_boiler_winter_temp_to -%}
+              script.turn_off_gas_boiler
+            {%- else -%}
+              script.keep_same_states
+            {%- endif -%}
+        {%- else -%}
+            script.turn_off_gas_boiler
+        {%- endif -%}

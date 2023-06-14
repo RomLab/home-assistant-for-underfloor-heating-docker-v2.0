@@ -1,0 +1,17 @@
+turn_off_gas_boiler:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - service: switch.turn_off
+      data:
+        entity_id: switch.gas_boiler
+
+turn_on_gas_boiler:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - service: switch.turn_on
+      data:
+        entity_id: switch.gas_boiler

@@ -1,0 +1,31 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+input_button:
+  ring_bell:
+    name: Ring bell
+    icon: mdi:bell
+
+switch:
+  - platform: rpi_gpio
+    switches:
+      - port: 26
+        name: "test"
+
+input_text:
+  text1:
+    name: Text 1
+    initial: Some Text

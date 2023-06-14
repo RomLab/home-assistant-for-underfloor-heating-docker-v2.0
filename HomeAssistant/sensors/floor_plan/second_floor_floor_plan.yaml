@@ -1,0 +1,30 @@
+# Seperate corridor and toilet sensor
+- platform: template
+  sensors:
+    second_floor_toilet_current_temp:
+      friendly_name: 'Aktuální teplota – toaleta (druhé patro)'
+      value_template: '{{ states("sensor.second_floor_corridor_and_toilet_temp") }}'
+      device_class: temperature
+    second_floor_corridor_current_temp:
+      friendly_name: 'Aktuální teplota – chodba (druhé patro)'
+      value_template: '{{ states("sensor.second_floor_corridor_and_toilet_temp") }}'
+      device_class: temperature
+
+    second_floor_toilet_required_temp:
+      friendly_name: 'Požadovaná teplota – toaleta (druhé patro)'
+      value_template: '{{ state_attr("climate.second_floor_corridor_and_toilet", "temperature") }}'
+      device_class: temperature
+
+    second_floor_heating_state_corridor:
+      friendly_name: 'Stav vytápění – chodba (druhé patro)'
+      value_template: '{{ states("binary_sensor.second_floor_heating_state_corridor_and_toilet") }}'
+    second_floor_heating_state_toilet:
+      friendly_name: 'Stav vytápění – toaleta (druhé patro)'
+      value_template: '{{ states("binary_sensor.second_floor_heating_state_corridor_and_toilet") }}'
+      
+    second_floor_detection_of_open_window_corridor:
+      friendly_name: 'Detekce otevřeného okna – chodba (druhé patro)'
+      value_template: '{{ states("binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet") }}'
+    second_floor_detection_of_open_window_toilet:
+      friendly_name: 'Detekce otevřeného okna – toaleta (druhé patro)'
+      value_template: '{{ states("binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet") }}'

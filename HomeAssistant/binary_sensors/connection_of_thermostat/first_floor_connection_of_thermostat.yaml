@@ -1,0 +1,63 @@
+# Checks of connection local thermostat on a first floor
+- platform: template
+  sensors:
+    first_floor_connection_of_thermostat_corridor_and_toilet:
+      friendly_name: 'Stav připojení'
+      value_template:  >
+        {%- set currentHours = utcnow().hour | int -%}
+        {%- set currentMinutes =  utcnow().minute| int -%}
+        {%- if not is_state('sensor.first_floor_corridor_and_toilet_actual_time', 'unknown') and 
+        (currentHours * 60 + currentMinutes - 3)  < (not is_state('sensor.first_floor_corridor_and_toilet_actual_time', 'unavailable') and states('sensor.first_floor_corridor_and_toilet_actual_time') | int) -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+      device_class: connectivity
+    first_floor_connection_of_thermostat_bathroom:
+      friendly_name: 'Stav připojení'
+      value_template:  >
+        {%- set currentHours = utcnow().hour | int -%}
+        {%- set currentMinutes =  utcnow().minute| int -%}
+        {%- if not is_state('sensor.first_floor_bathroom_actual_time', 'unknown') and 
+        (currentHours * 60 + currentMinutes - 3)  < (not is_state('sensor.first_floor_bathroom_actual_time', 'unavailable') and states('sensor.first_floor_bathroom_actual_time') | int) -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+      device_class: connectivity
+    first_floor_connection_of_thermostat_living_room_and_kitchen:
+      friendly_name: 'Stav připojení'
+      value_template:  >
+        {%- set currentHours = utcnow().hour | int -%}
+        {%- set currentMinutes =  utcnow().minute| int -%}
+        {%- if not is_state('sensor.first_floor_living_room_and_kitchen_actual_time', 'unknown') and 
+        (currentHours * 60 + currentMinutes - 3)  < (not is_state('sensor.first_floor_living_room_and_kitchen_actual_time', 'unavailable') and states('sensor.first_floor_living_room_and_kitchen_actual_time') | int) -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+      device_class: connectivity
+    first_floor_connection_of_thermostat_cellar:
+      friendly_name: 'Stav připojení'
+      value_template:  >
+        {%- set currentHours = utcnow().hour | int -%}
+        {%- set currentMinutes =  utcnow().minute| int -%}
+        {%- if not is_state('sensor.first_floor_cellar_actual_time', 'unknown') and 
+        (currentHours * 60 + currentMinutes - 3)  < (not is_state('sensor.first_floor_cellar_actual_time', 'unavailable') and states('sensor.first_floor_cellar_actual_time') | int) -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+      device_class: connectivity
+    first_floor_connection_of_thermostat_garage:
+      friendly_name: 'Stav připojení'
+      value_template:  >
+        {%- set currentHours = utcnow().hour | int -%}
+        {%- set currentMinutes =  utcnow().minute| int -%}
+        {%- if not is_state('sensor.first_floor_garage_actual_time', 'unknown') and 
+        (currentHours * 60 + currentMinutes - 3)  < (not is_state('sensor.first_floor_garage_actual_time', 'unavailable') and states('sensor.first_floor_garage_actual_time') | int) -%}
+          on
+        {%- else -%}
+          off
+        {%- endif -%}
+      device_class: connectivity

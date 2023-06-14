@@ -1,0 +1,120 @@
+gas_boiler_summer_temp_from:
+  name: 'Min. horní čidlo'
+  min: 0
+  max: 80
+  mode: slider
+  step: 1
+  initial: 45
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+gas_boiler_summer_temp_to:
+  name: 'Max. střední čidlo'
+  min: 0
+  max: 80
+  mode: slider
+  step: 1
+  initial: 75
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+gas_boiler_winter_temp_from:
+  name: 'Min. horní čidlo'
+  min: 0
+  max: 80
+  mode: slider
+  step: 1
+  initial: 40
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+gas_boiler_winter_temp_to:
+  name: 'Max. střední čidlo'
+  min: 0
+  max: 80
+  mode: slider
+  step: 1
+  initial: 50
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+gas_boiler_temp_hysteresis:
+  name: 'Hystereze kotle'
+  min: 0
+  max: 20
+  mode: slider
+  step: 1
+  initial: 2
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+led_indication_min_value_temp_top_sensor:
+  name: 'Horní čidlo min. pod'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 45
+  unit_of_measurement: '°C'
+led_indication_max_value_temp_middle_sensor:
+  name: 'Střední čidlo max. nad'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 70
+  unit_of_measurement: '°C'
+led_indication_max_value_temp_bottom_sensor:
+  name: 'Spodní čidlo max. nad'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 85
+  unit_of_measurement: '°C'
+fireplace_cellar_min_temp_value:
+  name: 'Min. sklep'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 45
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+fireplace_first_floor_min_temp_value:
+  name: 'Min. první patro'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 45
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+fireplace_second_floor_min_temp_value:
+  name: 'Min. druhé patro'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  initial: 45
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+min_temp_summer_mode:
+  name: 'Min. venkovní teplota pro letní mód'
+  min: 0
+  max: 100
+  mode: slider
+  step: 1
+  unit_of_measurement: '°C'
+  icon: mdi:thermometer
+pumps_lenght_of_run:
+  name: 'Délka spuštění'
+  min: 1
+  max: 59
+  mode: slider
+  step: 1
+  unit_of_measurement: minuty
+  icon: mdi:alarm
+test_restart:
+  name: 'Test restart'
+  min: 1
+  max: 59
+  mode: box
+  step: 1
+  unit_of_measurement: minuty
+  icon: mdi:alarm

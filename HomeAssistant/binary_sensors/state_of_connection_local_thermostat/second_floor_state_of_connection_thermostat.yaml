@@ -1,0 +1,43 @@
+# State of connection local thermostat for a first floor
+- platform: template
+  sensors:
+    second_floor_state_of_connection_bathroom:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_bathroom') }}" 
+      icon_template: mdi:connection
+    second_floor_state_of_connection_kitchen_workroom_living_and_diving_room:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_kitchen_workroom_living_and_diving_room') }}"  
+      icon_template: mdi:connection
+    second_floor_state_of_connection_thomas_bedroom:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_thomas_bedroom') }}"  
+      icon_template: mdi:connection
+    second_floor_state_of_connection_north_room:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_north_room') }}"  
+      icon_template: mdi:connection
+    second_floor_state_of_connection_middle_room:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_middle_room') }}"  
+      icon_template: mdi:connection
+    second_floor_state_of_connection_corner_room:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_corner_room') }}"   
+      icon_template: mdi:connection
+    second_floor_state_of_connection_corridor_and_toilet:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_corridor_and_toilet') }}"    
+      icon_template: mdi:connection
+    second_floor_state_of_connection_parents_bedroom:
+      friendly_name: 'Stav připojení'
+      device_class: connectivity
+      value_template: "{{ states('input_boolean.second_floor_state_of_connection_parents_bedroom') }}"   
+      icon_template: mdi:connection

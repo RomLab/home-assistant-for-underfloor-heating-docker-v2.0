@@ -1,0 +1,227 @@
+sensor.hot_water_tank_top:
+  icon:  mdi:format-vertical-align-top
+sensor.hot_water_tank_middle:
+  icon: mdi:format-align-middle
+sensor.hot_water_tank_bottom:
+  icon: mdi:format-vertical-align-bottom
+sensor.fireplace_cellar:
+  icon: mdi:fireplace
+sensor.fireplace_first_floor:
+  icon: mdi:fireplace
+sensor.fireplace_second_floor:
+  icon: mdi:fireplace
+sensor.outdoor_temperature:
+  friendly_name: 'Venkovní teplota'
+  icon: mdi:home-thermometer   
+input_number.led_indication_min_value_temp_top_sensor:
+  entity_picture: /local/images/icons/blue-led.png
+input_number.led_indication_max_value_temp_middle_sensor:
+  entity_picture: /local/images/icons/orange-led.png
+input_number.led_indication_max_value_temp_bottom_sensor:
+  entity_picture: /local/images/icons/red-led.png
+switch.gas_boiler: 
+  friendly_name: 'Plynový kotel'
+  icon: mdi:water-boiler
+switch.pump_fireplace_cellar:
+  friendly_name: 'Sklep – čerpadlo krbu'
+  icon: mdi:fireplace
+switch.pump_fireplace_first_floor:
+  friendly_name: 'Přízemí – čerpadlo krbu'
+  icon: mdi:fireplace
+switch.pump_fireplace_second_floor:
+  friendly_name: 'Patro – čerpadlo krbu'
+  icon: mdi:fireplace
+switch.pump_first_floor:
+  friendly_name: 'Přízemí – podlahové topení'
+  icon: mdi:home-floor-1
+switch.pump_second_floor:
+  friendly_name: 'Patro – podlahové topení'
+  icon: mdi:home-floor-2
+switch.red_led:
+  friendly_name: 'Červená LED'
+switch.orange_led:
+  friendly_name: 'Oranžová LED'
+switch.blue_led:
+  friendly_name: 'Modrá LED'
+binary_sensor.temp_first_floor:
+  friendly_name: 'Přízemí'
+  icon: mdi:home-floor-1
+binary_sensor.temp_second_floor:
+  friendly_name: 'Patro'
+  icon: mdi:home-floor-2
+
+# Ping sensors
+binary_sensor.first_floor_ping_thermostat_corridor_and_toilet:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.first_floor_ping_thermostat_bathroom:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.first_floor_ping_thermostat_living_room_and_kitchen:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.first_floor_ping_thermostat_cellar:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.first_floor_ping_thermostat_garage:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_bathroom:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_kitchen_workroom_living_and_diving_room:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_thomas_bedroom:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_north_room:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_middle_room:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_corner_room:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_corridor_and_toilet:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+binary_sensor.second_floor_ping_thermostat_parents_bedroom:
+  friendly_name: 'Stav připojení'
+  icon: mdi:connection
+
+# MQTT sensors
+# MQTT sensor – first floor
+sensor.first_floor_corridor_and_toilet_temp:
+  friendly_name: 'Aktuální teplota – chodbaa a toaleta (první patro)'
+  icon: mdi:thermometer
+sensor.first_floor_bathroom_temp:
+  friendly_name: 'Aktuální teplota – koupelna (první patro)'
+  icon: mdi:thermometer
+sensor.first_floor_living_room_and_kitchen_temp:
+  friendly_name: 'Aktuální teplota – obývací pokoj a kuchyň (první patro)'
+  icon: mdi:thermometer
+sensor.first_floor_cellar_temp:
+  friendly_name: 'Aktuální teplota – sklep (první patro)'
+  icon: mdi:thermometer
+sensor.first_floor_garage_temp:
+  friendly_name: 'Aktuální teplota – garáž (první patro)'
+  icon: mdi:thermometer
+# MQTT sensor – second floor
+sensor.second_floor_bathroom_temp:
+  friendly_name: 'Aktuální teplota – koupelna (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_kitchen_workroom_living_and_diving_room_temp:
+  friendly_name: 'Aktuální teplota – kuchyň, pracovna, obývací a jídelní pokoj (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_thomas_bedroom_temp:
+  friendly_name: 'Aktuální teplota – Tomáš ložnice (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_north_room_temp:
+  friendly_name: 'Aktuální teplota – severní pokoj (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_middle_room_temp:
+  friendly_name: 'Aktuální teplota – střední pokoj (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_corner_room_temp:
+  friendly_name: 'Aktuální teplota – rohový pokoj (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_corridor_and_toilet_temp:
+  friendly_name: 'Aktuální teplota – chodba a toaleta (druhé patro)'
+  icon: mdi:thermometer
+sensor.second_floor_parents_bedroom_temp:
+  friendly_name: 'Aktuální teplota – ložnice rodičů (druhé patro)'
+  icon: mdi:thermometer
+
+# Climates
+# First floor
+climate.first_floor_corridor_and_toilet:
+  friendly_name: 'Termostat přízemí – chodba a toaleta'
+climate.first_floor_bathroom:
+  friendly_name: 'Termostat přízemí – koupelna'
+climate.first_floor_living_room_and_kitchen:
+  friendly_name: 'Termostat přízemí – obývací pokoj a kuchyň'
+climate.first_floor_cellar:
+  friendly_name: 'Termostat přízemí – sklep'
+climate.first_floor_garage:
+  friendly_name: 'Termostat přízemí – garáž'
+
+# Second floor
+climate.second_floor_bathroom:
+  friendly_name: 'Termostat patro – koupelna'
+climate.second_floor_kitchen_workroom_living_and_diving_room:
+  friendly_name: 'Termostat patro – kuchyň, pracovna, obývací/jídelní pokoj'
+climate.second_floor_thomas_bedroom:
+  friendly_name: 'Termostat patro – Tomáš ložnice'
+climate.second_floor_north_room:
+  friendly_name: 'Termostat patro – severní pokoj'
+climate.second_floor_middle_room:
+  friendly_name: 'Termostat patro – střední pokoj'
+climate.second_floor_corner_room:
+  friendly_name: 'Termostat patro – rohový pokoj'
+climate.second_floor_corridor_and_toilet:
+  friendly_name: 'Termostat patro – chobba a toaleta'
+climate.second_floor_parents_bedroom:
+  friendly_name: 'Termostat patro – ložnice rodičů'
+
+# Heating states
+# First state
+binary_sensor.first_floor_heating_state_corridor_and_toilet:
+  icon: mdi:radiator
+binary_sensor.first_floor_heating_state_bathroom:
+  icon: mdi:radiator
+binary_sensor.first_floor_heating_state_living_room_and_kitchen:
+  icon: mdi:radiator
+binary_sensor.first_floor_heating_state_cellar:
+  icon: mdi:radiator
+binary_sensor.first_floor_heating_state_garage:
+  icon: mdi:radiator
+# Second floor
+binary_sensor.second_floor_heating_state_bathroom:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_kitchen_workroom_living_and_diving_room:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_thomas_bedroom:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_north_room:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_middle_room:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_corner_room:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_parents_bedroom:
+  icon: mdi:radiator
+binary_sensor.second_floor_heating_state_corridor_and_toilet:
+  icon: mdi:radiator
+
+# Floor plan
+# First floor
+sensor.first_floor_heating_state_living_room:
+  icon: mdi:radiator
+sensor.first_floor_heating_state_kitchen:
+  icon: mdi:radiator
+sensor.first_floor_heating_state_corridor:
+  icon: mdi:radiator
+sensor.first_floor_heating_state_toilet:
+  icon: mdi:radiator
+
+sensor.first_floor_detection_of_open_window_living_room:
+  icon: mdi:window-closed
+sensor.first_floor_detection_of_open_window_kitchen:
+  icon: mdi:window-closed
+sensor.first_floor_detection_of_open_window_corridor:
+  icon: mdi:window-closed
+sensor.first_floor_detection_of_open_window_toilet:
+  icon: mdi:window-closed
+
+# Second floor
+sensor.second_floor_heating_state_corridor:
+  icon: mdi:radiator
+sensor.second_floor_heating_state_toilet:
+  icon: mdi:radiator
+
+sensor.second_floor_detection_of_open_window_corridor:
+  icon: mdi:window-closed
+sensor.second_floor_detection_of_open_window_toilet:
+  icon: mdi:window-closed

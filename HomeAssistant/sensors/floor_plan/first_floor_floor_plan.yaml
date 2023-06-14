@@ -1,0 +1,54 @@
+# Seperate living room and kitchen sensor
+- platform: template
+  sensors:
+    first_floor_living_room_current_temp:
+      friendly_name: 'Aktuální teplota – obývací pokoj (první patro)'
+      value_template: '{{ states("sensor.first_floor_living_room_and_kitchen_temp") }}'
+      device_class: temperature
+    first_floor_kitchen_current_temp:
+      friendly_name: 'Aktuální teplota – kuchyň (první patro)'
+      value_template: '{{ states("sensor.first_floor_living_room_and_kitchen_temp") }}'
+      device_class: temperature
+    first_floor_corridor_current_temp:
+      friendly_name: 'Aktuální teplota – chodba (první patro)'
+      value_template: '{{ states("sensor.first_floor_corridor_and_toilet_temp") }}'
+      device_class: temperature
+    first_floor_toilet_current_temp:
+      friendly_name: 'Aktuální teplota – záchod (první patro)'
+      value_template: '{{ states("sensor.first_floor_corridor_and_toilet_temp") }}'
+      device_class: temperature
+
+    first_floor_kitchen_required_temp:
+      friendly_name: 'Požadovaná teplota – kuchyň (první patro)'
+      value_template: '{{ state_attr("climate.first_floor_living_room_and_kitchen", "temperature") }}'
+      device_class: temperature
+    first_floor_corridor_required_temp:
+      friendly_name: 'Požadovaná teplota – chodba (první patro)'
+      value_template: '{{ state_attr("climate.first_floor_corridor_and_toilet", "temperature") }}'
+      device_class: temperature
+    
+    first_floor_heating_state_living_room:
+      friendly_name: 'Stav vytápění – obývací pokoj (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_heating_state_living_room_and_kitchen") }}'
+    first_floor_heating_state_kitchen:
+      friendly_name: 'Stav vytápění – kuchyň (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_heating_state_living_room_and_kitchen") }}'
+    first_floor_heating_state_corridor:
+      friendly_name: 'Stav vytápění – chodba (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_heating_state_corridor_and_toilet") }}'
+    first_floor_heating_state_toilet:
+      friendly_name: 'Stav vytápění – toaleta (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_heating_state_corridor_and_toilet") }}'
+    
+    first_floor_detection_of_open_window_living_room:
+      friendly_name: 'Detekce otevřeného okna – obývací pokoj (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen") }}'
+    first_floor_detection_of_open_window_kitchen:
+      friendly_name: 'Detekce otevřeného okna – kuchyň (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_detection_of_open_window_living_room_and_kitchen") }}'
+    first_floor_detection_of_open_window_corridor:
+      friendly_name: 'Detekce otevřeného okna – chodba (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet") }}'
+    first_floor_detection_of_open_window_toilet:
+      friendly_name: 'Detekce otevřeného okna – toaleta (první patro)'
+      value_template: '{{ states("binary_sensor.first_floor_detection_of_open_window_corridor_and_toilet") }}'

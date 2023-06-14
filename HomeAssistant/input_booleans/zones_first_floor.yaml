@@ -1,0 +1,15 @@
+# Corridor and toilet
+zone_first_floor_corridor_and_toilet:
+  name: 'Vytápění chodba/toaleta'
+# Bathroom
+zone_first_floor_bathroom:
+  name: 'Vytápění koupelna'
+# Living room and kitchen
+zone_first_floor_living_room_and_kitchen:
+  name: 'Vytápění obývací pokoj/kuchyň'
+# Cellar
+zone_first_floor_cellar:
+  name: 'Vytápění sklep'
+# Garage
+zone_first_floor_garage:
+  name: 'Vytápění garáž'

@@ -1,0 +1,79 @@
+views:
+  - title: 'Přízemí – Teplotní plány'
+    path: prizemi-teplotni-plany
+    cards:
+      - type: 'custom:scheduler-card'
+        title: 'Chodba a toaleta'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.first_floor_corridor_and_toilet 
+        customize:
+          climate.first_floor_corridor_and_toilet:
+            name: 'Chodba a toaleta'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Koupelna'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.first_floor_bathroom 
+        customize:
+          climate.first_floor_bathroom:
+            name: 'Koupelna'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Obývací pokoj a kuchyň'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.first_floor_living_room_and_kitchen 
+        customize:
+          climate.first_floor_living_room_and_kitchen:
+            name: 'Obývací pokoj a kuchyň'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Sklep'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.first_floor_cellar 
+        customize:
+          climate.first_floor_cellar:
+            name: 'Sklep'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']
+      - type: 'custom:scheduler-card'
+        title: 'Garáž'
+        discover_existing: false
+        display_options:
+          primary_info:
+            - "{name}"
+            - "{relative-time}: {action}"
+          secondary_info: time
+        include:
+          - climate.first_floor_garage 
+        customize:
+          climate.first_floor_garage:
+            name: 'Garáž'
+          input_boolean.control_according_to_plans:
+            states: ['on', 'off']

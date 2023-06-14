@@ -1,0 +1,11 @@
+turn_off_orange_led:
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.orange_led
+
+turn_on_orange_led:
+  sequence:
+    - service: switch.turn_on
+      data:
+        entity_id: switch.orange_led

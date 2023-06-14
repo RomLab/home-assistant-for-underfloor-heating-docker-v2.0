@@ -1,0 +1,104 @@
+views:
+  - title: 'Patro – půdorys'
+    path: patro-pudorys
+    panel: true
+    cards:
+      - config:
+          image: /local/floorplan/patro-pudorys.svgz
+          stylesheet: /local/floorplan/style.css
+          cache: true 
+          #log_level: error
+          defaults:
+              hover_action: hover-info
+              tap_action: more-info
+          rules:
+            - name: 'Actual temperature in rooms'
+              entities:
+                - sensor.second_floor_bathroom_temp
+                - sensor.second_floor_kitchen_workroom_living_and_diving_room_temp
+                - sensor.second_floor_thomas_bedroom_temp
+                - sensor.second_floor_north_room_temp
+                - sensor.second_floor_middle_room_temp
+                - sensor.second_floor_corner_room_temp
+                - sensor.second_floor_parents_bedroom_temp
+                # Seperate corridor and toilet
+                - sensor.second_floor_corridor_current_temp
+                - sensor.second_floor_toilet_current_temp
+              state_action:
+                - service: floorplan.text_set
+                  service_data: 'Aktuální: ${entity.state} °C'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-actual-temp'
+            - name: 'Required temperatures in rooms – climate'
+              entities:
+                - climate.second_floor_bathroom
+                - climate.second_floor_kitchen_workroom_living_and_diving_room
+                - climate.second_floor_thomas_bedroom
+                - climate.second_floor_north_room
+                - climate.second_floor_middle_room
+                - climate.second_floor_corner_room
+                - climate.second_floor_corridor_and_toilet
+                - climate.second_floor_parents_bedroom
+              state_action:
+                - service: floorplan.text_set
+                  service_data: 'Požadovaná: ${entity.attributes.temperature} °C'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-required-temp'
+            # Seperate corridor and toilet
+            - name: 'Required temperatures in rooms – sensor'
+              entities:
+                - sensor.second_floor_toilet_required_temp
+              state_action:
+                - service: floorplan.text_set
+                  service_data: 'Požadovaná: ${entity.state} °C'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-required-temp'
+            - name: 'Heating state in rooms'
+              entities:
+                - binary_sensor.second_floor_heating_state_bathroom
+                - binary_sensor.second_floor_heating_state_kitchen_workroom_living_and_diving_room
+                - binary_sensor.second_floor_heating_state_thomas_bedroom
+                - binary_sensor.second_floor_heating_state_north_room
+                - binary_sensor.second_floor_heating_state_middle_room
+                - binary_sensor.second_floor_heating_state_corner_room
+                - binary_sensor.second_floor_heating_state_parents_bedroom
+                # Seperate corridor and toilet
+                - sensor.second_floor_heating_state_corridor
+                - sensor.second_floor_heating_state_toilet
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${(entity.state == "on") ? "Topí se" : "Netopí se"}'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-temp'
+            - name: 'Detection open window in rooms'
+              entities:
+                - binary_sensor.second_floor_detection_of_open_window_bathroom
+                - binary_sensor.second_floor_detection_of_open_window_kitchen_workroom_living_and_diving_room
+                - binary_sensor.second_floor_detection_of_open_window_thomas_bedroom
+                - binary_sensor.second_floor_detection_of_open_window_north_room
+                - binary_sensor.second_floor_detection_of_open_window_middle_room
+                - binary_sensor.second_floor_detection_of_open_window_corner_room
+                - binary_sensor.second_floor_detection_of_open_window_parents_bedroom
+                 # Seperate corridor and toilet
+                - sensor.second_floor_detection_of_open_window_corridor
+                - sensor.second_floor_detection_of_open_window_toilet
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${(entity.state == "on") ? "Otevřené okno" : "Zavřené okno"}'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-temp'
+            - name: 'Fireplace'
+              entities:
+                - switch.pump_fireplace_second_floor
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${(entity.state == "on") ? "Topí se" : "Netopí se"}'
+                - service: floorplan.class_set
+                  service_data:
+                    class: 'static-temp'
+        type: 'custom:floorplan-card'

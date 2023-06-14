@@ -1,0 +1,43 @@
+turn_on_actuator_second_floor_north_room:
+  alias: 'Turn on actuators for a north room in a second floor'
+  description: 'Turn on actuators for a north room in a second floor'
+  sequence:
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_second_floor', '1') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_room_thermostat', 'on') and is_state('input_boolean.zone_second_floor_north_room', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans', 'on') and is_state('input_boolean.zone_second_floor_north_room', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_north_room_forecast', 'heating') and is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_north_room_forecast', 'off') and is_state('input_boolean.zone_second_floor_north_room', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'off') }}"
+    - service: input_boolean.turn_on
+      target:
+        entity_id: 
+          - input_boolean.thermo_actuator_second_floor_north_room
+
+turn_off_actuator_second_floor_north_room:
+  alias: 'Turn off actuators for a north room in a second floor'
+  description: 'Turn off actuators for a north room in a second floor'
+  sequence:
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'off') and is_state('input_boolean.manual_control_room_thermostat', 'off') and is_state('input_boolean.control_according_to_plans', 'off') and is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'off') }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_second_floor', '0') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.manual_control_room_thermostat', 'on') and (is_state('input_boolean.zone_second_floor_north_room', 'off') or (is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'off') or is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans', 'on') and (is_state('input_boolean.zone_second_floor_north_room', 'off') or (is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'off') or is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and (is_state('sensor.second_floor_north_room_forecast', 'not_heating') or (is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'off') or is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'on'))) }}"
+        - condition: template
+          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and ((is_state('sensor.second_floor_north_room_forecast', 'off') and is_state('input_boolean.zone_second_floor_north_room', 'off')) or (is_state('binary_sensor.second_floor_connection_of_thermostat_north_room', 'off') or is_state('binary_sensor.second_floor_detection_of_open_window_north_room', 'on'))) }}"
+    - service: input_boolean.turn_off
+      target:
+        entity_id: 
+          - input_boolean.thermo_actuator_second_floor_north_room

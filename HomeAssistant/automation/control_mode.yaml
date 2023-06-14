@@ -1,0 +1,87 @@
+# Modes of control – Only active one a mode, all others are off
+
+- alias: 'Control mode from outdoor temp. sensor'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.control_mode_from_outdoor_temp_sensor
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: 
+        - input_boolean.manual_summer_mode
+        - input_boolean.manual_winter_mode
+
+- alias: 'Manual winter mode'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.manual_winter_mode
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.control_mode_from_outdoor_temp_sensor
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.manual_summer_mode
+
+- alias: 'Manual summer mode'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.manual_summer_mode
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.control_mode_from_outdoor_temp_sensor
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.manual_winter_mode
+
+# Heating control according to temperature sensing – only active one a mode, all others are off
+- alias: 'Control mode from corridor thermostat'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.manual_control_corridor_thermostat
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: 
+        - input_boolean.manual_control_room_thermostat
+        - input_boolean.control_according_to_plans
+        - input_boolean.control_according_to_plans_with_temperature_prediction
+- alias: 'Control mode from room thermostat'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.manual_control_room_thermostat
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: 
+        - input_boolean.manual_control_corridor_thermostat
+        - input_boolean.control_according_to_plans
+        - input_boolean.control_according_to_plans_with_temperature_prediction
+- alias: 'Control mode from temperature plans'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.control_according_to_plans
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: 
+        - input_boolean.manual_control_room_thermostat
+        - input_boolean.manual_control_corridor_thermostat
+        - input_boolean.control_according_to_plans_with_temperature_prediction
+- alias: 'Control mode from temperature plans with temperature predcition'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.control_according_to_plans_with_temperature_prediction
+    to: 'on'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: 
+        - input_boolean.manual_control_room_thermostat
+        - input_boolean.manual_control_corridor_thermostat
+        - input_boolean.control_according_to_plans

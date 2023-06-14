@@ -1,0 +1,16 @@
+# Settings of mode according to temperature
+- platform: template
+  sensors:
+    mode_control_from_outdoor_temp_sensor:
+      value_template: >
+        {%- set outdoor_temperature = states('sensor.outdoor') | int -%}
+        {%- set min_temp_summer_mode = states('input_number.min_temp_summer_mode') | int -%}
+        {%- if is_state('input_boolean.control_mode_from_outdoor_temp_sensor', 'on') -%}
+          {%- if outdoor_temperature >= min_temp_summer_mode -%}
+            summer
+          {%- else -%}
+            winter
+          {%- endif -%}
+        {%- else -%}
+          null
+        {%- endif -%}

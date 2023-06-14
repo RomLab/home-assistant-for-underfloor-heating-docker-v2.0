@@ -1,0 +1,17 @@
+turn_off_pump_corridor_second_floor:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - service: switch.turn_off
+      data:
+        entity_id: switch.pump_second_floor
+
+turn_on_pump_corridor_second_floor:
+  sequence:
+    - condition: state
+      entity_id: input_boolean.manual_control_devices
+      state: 'off'
+    - service: switch.turn_on
+      data:
+        entity_id: switch.pump_second_floor
