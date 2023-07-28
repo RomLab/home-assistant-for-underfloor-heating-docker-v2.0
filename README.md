@@ -1,4 +1,4 @@
-# Home Assistant for underfloor heating (docker version) v2.0
+# Home Assistant for underfloor heating (Docker version) v2.0
 Software (scripts) for Home Assistant in Docker.
 
 I have used a Raspberry Pi 4B with the operating system [Raspberry Pi OS Lite (32-bit)](https://www.raspberrypi.com/software/operating-systems/). I have used an installation via the [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
