@@ -359,13 +359,6 @@ logbook:
       - binary_sensor.second_floor_detection_of_open_window_corridor_and_toilet
       - binary_sensor.second_floor_detection_of_open_window_parents_bedroom
 
-#mqtt:
-#  broker: localhost
-#  username: homeassistant
-#  password: VelmiSilneHesloProHomeassistant
-
-
-
 
 binary_sensor: !include_dir_merge_list binary_sensors/
 input_number: !include_dir_merge_named input_numbers/
