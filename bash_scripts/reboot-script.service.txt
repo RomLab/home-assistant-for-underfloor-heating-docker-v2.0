@@ -1,0 +1,15 @@
+# https://devicetests.com/crontab-reboot-not-working
+
+[Unit]
+Description=Run script at startup
+After=network.target
+
+[Service]
+ExecStart=socat -u tcp-l:7777,fork system:/home/pi/bash_scripts/ha_script.sh
+User=root
+Group=root
+Type=simple
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
