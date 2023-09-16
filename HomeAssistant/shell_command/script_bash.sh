@@ -1,5 +1,5 @@
 #!/bin/bash
-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmODk2OTljYmM0NjQ0YTc3YWM4MTgwN2M5Mzc1YTE3MSIsImlhdCI6MTY5NDYzNDY4NiwiZXhwIjoyMDA5OTk0Njg2fQ.MLKnVs0Qjj27lFRdXdN6DZmoLidduHGhe3NWRVFd9-A"
+token=""
 # Gets input parameter
 parameter=$1
 # Gets IP4 address
