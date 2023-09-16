@@ -1,0 +1,2 @@
+shutdown_rpi: bash /config/shell_command/script_bash.sh ha_shutdown
+restart_rpi: bash /config/shell_command/script_bash.sh ha_reboot
