@@ -374,5 +374,5 @@ climate: !include_dir_merge_list climates/
 automation: !include_dir_merge_list automation/
 script: !include_dir_merge_named scripts/
 group: !include_dir_merge_named groups/
-shell_command: !include shell_command.yaml
+shell_command: !include_dir_merge_named shell_command/
 

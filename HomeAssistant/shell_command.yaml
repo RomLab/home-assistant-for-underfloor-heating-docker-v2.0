@@ -1,2 +1,0 @@
-shutdown_rpi: 'sudo shutdown -h now'
-restart_rpi: 'sudo shutdown -r now'
