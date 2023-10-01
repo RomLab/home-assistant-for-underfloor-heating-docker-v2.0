@@ -16,8 +16,11 @@ class TEMP18B20(hass.Hass):
     def read_and_set_temp(self, kwargs): 
 
         hot_water_tank_top_temperature = self.read_temp("28-00000c859e14")
+        time.sleep(2)
         hot_water_tank_middle_temperature = self.read_temp("28-00000c85a5bc")
+        time.sleep(2)
         hot_water_tank_bottom_temperature = self.read_temp("28-00000c864409")
+        time.sleep(2)
 
         #outdoor_temperature = self.read_temp("28-00000c85a20f")
 
@@ -50,7 +53,8 @@ class TEMP18B20(hass.Hass):
         lines = self.read_temp_raw(deviceCode)
         # Wait until the data is valid - end of the first line reads 'YES'
         while lines[0].strip()[-3:] != 'YES':
-            time.sleep(0.2)
+            #time.sleep(0.2)
+            time.sleep(2)
             lines = self.read_temp_raw(deviceCode)
         # Read the temperature, that is on the second line
         equals_pos = lines[1].find('t=')

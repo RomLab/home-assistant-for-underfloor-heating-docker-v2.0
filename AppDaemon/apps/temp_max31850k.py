@@ -15,8 +15,11 @@ class TEMPMAX31850K(hass.Hass):
 
     def read_and_set_temp(self, kwargs): 
         fireplace_cellar_temperature = self.read_temp("3b-4c74109d6361")
+        time.sleep(2)
         fireplace_first_floor_temperature = self.read_temp("3b-4c74109d636d")
+        time.sleep(2)
         fireplace_second_floor_temperature = self.read_temp("3b-4c74109d6349")
+        time.sleep(2)
 
         states_fireplace_cellar = self.get_state("sensor.fireplace_cellar", attribute='all')
         attributes_fireplace_cellar = states_fireplace_cellar['attributes']
@@ -44,7 +47,8 @@ class TEMPMAX31850K(hass.Hass):
         lines = self.read_temp_raw(deviceCode)
         # Wait until the data is valid - end of the first line reads 'YES'
         while lines[0].strip()[-3:] != 'YES':
-            time.sleep(0.2)
+            #time.sleep(0.2)
+            time.sleep(2)
             lines = self.read_temp_raw(deviceCode)
         # Read the temperature, that is on the second line
         equals_pos = lines[1].find('t=')
