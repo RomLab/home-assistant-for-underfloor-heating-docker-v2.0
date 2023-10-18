@@ -1,12 +1,15 @@
 i2c_lcd:
   module: i2c_lcd
   class: I2CLCD
-temp_max31850k:
-  module: temp_max31850k
-  class: TEMPMAX31850K
-temp_18b20:
-  module: temp_18b20
-  class: TEMP18B20
+temperature_sensors:
+  module: temperature_sensors
+  class: TEMPERATURESENSORS  
+#temp_max31850k:
+#  module: temp_max31850k
+#  class: TEMPMAX31850K
+#temp_18b20:
+#  module: temp_18b20
+#  class: TEMP18B20
 read_thermostat:
   module: read_thermostat
   class: READTHERMOSTAT
