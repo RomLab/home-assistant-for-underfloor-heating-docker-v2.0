@@ -9,6 +9,8 @@ There is the [installation of Docker Compose](https://dev.to/elalemanyo/how-to-i
 - In a folder **AppDaemon** is configuration for [AppDaemon](https://appdaemon.readthedocs.io/en/latest/). I use AppDaemon in a container (Docker Compose). It is necessary to copy content to a folder with the configuration AppDaemon.
 - In a folder **mosquitto** is configuration for [Mosquitto broker](https://mosquitto.org/). I use Mosquitto in a container (Docker Compose). It is necessary to copy content to a folder with configuration Mosquitto.
 
+It is necessary generate toke for [AppDaemon (appdaemon.yaml)](AppDaemon/appdaemon.yaml) and insert into part "token". The token for [bash script (ha_script.sh)](bash_scripts/ha_script.sh) and insert into part "token" and insert the same token into [bash script (script_bash.sh)](HomeAssistant/shell_command/script_bash.sh). These tokens are possible generate in GUI in the Home Assistant.
+
 Settings for all containers are in a folder **docker_settings**.
 
 
