@@ -10,7 +10,7 @@ There is the [installation of Docker Compose](https://dev.to/elalemanyo/how-to-i
 - In a folder **mosquitto** is configuration for [Mosquitto broker](https://mosquitto.org/). I use Mosquitto in a container (Docker Compose). It is necessary to copy content to a folder with configuration Mosquitto.
 
 #### Tokens
-It is necessary generate toke for [AppDaemon (appdaemon.yaml)](AppDaemon/appdaemon.yaml) and insert into part "token" and change url/IP address and the same token and url/IP address insert into [Docker compose settings](docker_settings/compose.yml). The token for [bash script (ha_script.sh)](bash_scripts/ha_script.sh) and insert into part "token" and insert the same token into [bash script (script_bash.sh)](HomeAssistant/shell_command/script_bash.sh). These tokens are possible generate in GUI in the Home Assistant.
+It is necessary generate toke for [AppDaemon (appdaemon.yaml)](AppDaemon/appdaemon.yaml) and insert into part "token" and change url/IP address and the same token and url/IP address insert into [Docker compose settings for AppDaemon](docker_settings/compose.yml). The token for [bash script (ha_script.sh)](bash_scripts/ha_script.sh) and insert into part "token" and insert the same token into [bash script (script_bash.sh)](HomeAssistant/shell_command/script_bash.sh). These tokens are possible generate in GUI in the Home Assistant.
 
 #### AppDaemon
 - In [AppDaemon/apps/temperature_sensors.py](AppDaemon/apps/temperature_sensors.py) is necessary change ID sensors according to your IDs.
