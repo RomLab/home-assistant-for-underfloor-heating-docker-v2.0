@@ -1,6 +1,18 @@
 # Into root system: sudo apt-get install socat
-# Add token into home/pi/bash_scripts/ha_script.sh and smb://192.168.11.196/home/pi/HomeAssistant/shell_command/script_bash.sh
-# Add service as sudo: https://devicetests.com/crontab-reboot-not-working
+
+# Create a token with name bash_script_control_rpi (in the Home Assistant --> Name --> Long-Lived Access Tokens --> CreateToken) and paste the token into 
+# home/pi/bash_scripts/ha_script.sh and smb://[Your IP address]/home/pi/HomeAssistant/shell_command/script_bash.sh
+
+# Add service:
+# cd /lib/systemd/system
+# sudo touch homeassistantcontrolrpi.service
+# sudo nano homeassistantcontrolrpi.service
+# Copy service below to the new service file.
+# sudo systemctl daemon-reload
+# sudo systemctl enable homeassistantcontrolrpi.service
+# sudo systemctl start homeassistantcontrolrpi.service 
+# Control status service: sudo systemctl status homeassistantcontrolrpi.service 
+
 
 [Unit]
 Description=Run script at startup
