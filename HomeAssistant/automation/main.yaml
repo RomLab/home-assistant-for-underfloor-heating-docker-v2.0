@@ -7,6 +7,7 @@
   action:
     - service: script.turn_on
       entity_id: 
+        - script.idle_mode
         - script.set_actuators_first_floor
         - script.set_actuators_second_floor
         - script.hot_water_tank_top_sensor_gas_boiler  
@@ -16,5 +17,6 @@
         - script.hot_water_tank_top_sensor_led_indication 
         - script.hot_water_tank_middle_sensor_led_indication
         - script.hot_water_tank_bottom_sensor_led_indication
+     
 
         

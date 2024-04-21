@@ -29,3 +29,8 @@ control_according_to_plans:
   name: 'Automatické řízení podle teplotních plánů'
 control_according_to_plans_with_temperature_prediction:
   name: 'Automatické řízení podle teplotních plánů s teplotní predikcí'
+idle_mode:
+  name: 'Povolit klidový režim'
+  initial: true
+idle_mode_status:
+  name: 'Stav klidového režimu'

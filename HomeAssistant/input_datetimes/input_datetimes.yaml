@@ -2,3 +2,7 @@ pumps_start_cleaning:
     name: 'Čas spuštění'
     has_time: true
     initial: '18:00'
+idle_mode_selected_time:
+    name: 'Čas režimu'
+    has_time: true
+    initial: '23:00'

@@ -1,0 +1,11 @@
+turn_off_idle_mode_status:
+  sequence:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.idle_mode_status
+
+turn_on_idle_mode_status:
+  sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.idle_mode_status

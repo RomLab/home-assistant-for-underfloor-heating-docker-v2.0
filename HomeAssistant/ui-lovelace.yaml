@@ -141,6 +141,11 @@ views:
         - input_select.pumps_start_cleaning
         - input_datetime.pumps_start_cleaning
         - input_number.pumps_lenght_of_run
+    - type: entities
+      title: 'Klidový režim'
+      entities: 
+        - input_boolean.idle_mode
+        - input_datetime.idle_mode_selected_time
   - title: 'Ovládání RPi'
     path: ovladani-rpi
     cards:

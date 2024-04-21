@@ -5,15 +5,15 @@ turn_on_actuator_second_floor_thomas_bedroom:
     - condition: or
       conditions:
         - condition: template
-          value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_second_floor', '1') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'off') and is_state('input_boolean.manual_control_corridor_thermostat', 'on') and is_state('sensor.thermostat_second_floor', '1') and (is_state('input_boolean.manual_winter_mode', 'on') or is_state('sensor.mode_control_from_outdoor_temp_sensor', 'winter')) }}"
         - condition: template
-          value_template: "{{ is_state('input_boolean.manual_control_room_thermostat', 'on') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'off') and is_state('input_boolean.manual_control_room_thermostat', 'on') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
         - condition: template
-          value_template: "{{ is_state('input_boolean.control_according_to_plans', 'on') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'off') and is_state('input_boolean.control_according_to_plans', 'on') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
         - condition: template
-          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_thomas_bedroom_forecast', 'heating') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'off') and is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_thomas_bedroom_forecast', 'heating') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
         - condition: template
-          value_template: "{{ is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_thomas_bedroom_forecast', 'off') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'off') and is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'on') and is_state('sensor.second_floor_thomas_bedroom_forecast', 'off') and is_state('input_boolean.zone_second_floor_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_connection_of_thermostat_thomas_bedroom', 'on') and is_state('binary_sensor.second_floor_detection_of_open_window_thomas_bedroom', 'off') }}"
     - service: input_boolean.turn_on
       target:
         entity_id: 
@@ -25,6 +25,8 @@ turn_off_actuator_second_floor_thomas_bedroom:
   sequence:
     - condition: or
       conditions:
+        - condition: template
+          value_template: "{{ is_state('input_boolean.idle_mode_status', 'on') }}"
         - condition: template
           value_template: "{{ is_state('input_boolean.manual_control_corridor_thermostat', 'off') and is_state('input_boolean.manual_control_room_thermostat', 'off') and is_state('input_boolean.control_according_to_plans', 'off') and is_state('input_boolean.control_according_to_plans_with_temperature_prediction', 'off') }}"
         - condition: template

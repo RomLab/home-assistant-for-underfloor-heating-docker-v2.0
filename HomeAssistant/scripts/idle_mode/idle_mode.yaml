@@ -1,0 +1,12 @@
+idle_mode:
+  alias: 'Idle mode for heating.'
+  description: 'If it enables idle mode, heating will be to turn off for all modes of heating.'
+  sequence:
+    - service_template: >
+        {%- set idle_mode_selected_time = states('input_datetime.idle_mode_selected_time') -%}
+        {%- set current_time = now().strftime('%H:%M:%S') -%}
+        {%- if is_state('input_boolean.idle_mode', 'on') and current_time >= idle_mode_selected_time -%}
+          script.turn_on_idle_mode_status
+        {%- else -%}
+          script.turn_off_idle_mode_status
+        {%- endif -%}
