@@ -1,6 +1,6 @@
 idle_mode:
   alias: 'Idle mode for heating.'
-  description: 'If it enables idle mode, heating will be to turn off for all modes of heating.'
+  description: 'If idle mode enabled, heating will be to turn off for all modes of heating.'
   sequence:
     - service_template: >
         {%- set idle_mode_selected_time = states('input_datetime.idle_mode_selected_time') -%}
